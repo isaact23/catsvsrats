@@ -19,6 +19,10 @@ public class CatAttack : MonoBehaviour
     {
         rManager = FindObjectOfType<RatManager>();
     }
+    public void Setup(RatManager givenManager)
+    {
+        rManager = givenManager;
+    }
     void Start()
     {
         SpawnProjectile();

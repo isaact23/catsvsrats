@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Placeable : MonoBehaviour
+public class PlacedownSpace : MonoBehaviour
 {
     [SerializeField] private PlacingManager pMaster;
-    [SerializeField] private int sellingCost;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -18,17 +16,11 @@ public class Placeable : MonoBehaviour
     {
         
     }
-    public void Setup(PlacingManager givenMaster)
-    {
-        pMaster = givenMaster;
-    }
     void OnMouseDown()
     {
-        if (pMaster.IsSelling())
+        if (pMaster.IsPlacing())
         {
-            // CAT SOLD
-            pMaster.money = pMaster.money + sellingCost;
-            Destroy(gameObject);
+            pMaster.PlaceCat();
         }
     }
 }
