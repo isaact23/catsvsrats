@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: StandardRat
   m_EditorClassIdentifier: 
   nextGeneration: []
+  sprites:
+  - {fileID: 3937045386889021123, guid: 0ff939ba158862f4f8ebc999d0617315, type: 3}
+  - {fileID: -2478485295355522901, guid: 0ff939ba158862f4f8ebc999d0617315, type: 3}
   color: {r: 1, g: 1, b: 1, a: 0}
-  sprite: {fileID: 3937045386889021123, guid: 0ff939ba158862f4f8ebc999d0617315, type: 3}
   startHp: 100
   speed: 2.5
+  spritesPerSecond: 2
   defense: 0
   bombDefense: 0
   magicDefense: 0

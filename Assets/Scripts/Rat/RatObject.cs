@@ -41,7 +41,7 @@ namespace Rat
             hp = ratType.startHp;
             timeElapsed = 0f;
             pathProgress = 0f;
-            currentSprite = 0;
+            currentSprite = -1;
             UpdateHpBar();
         }
 
