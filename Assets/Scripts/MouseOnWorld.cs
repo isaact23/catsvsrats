@@ -17,7 +17,7 @@ public class MouseOnWorld : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f;
         testObject.position = mousePos;
         if (true || toPlace != null) 
@@ -32,5 +32,10 @@ public class MouseOnWorld : MonoBehaviour
     private bool CanSelectCat()
     {
         return true;
+    }
+    public Vector3 GetPlacerPosition()
+    {
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        return new Vector3(Mathf.Round(mousePos.x), Mathf.Round(mousePos.y), 0f);
     }
 }

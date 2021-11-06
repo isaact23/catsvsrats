@@ -17,6 +17,11 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         float moveDistance = flightSpeed * Time.deltaTime;
         Vector3 moveDirection = target.transform.position - transform.position;
         transform.Translate(moveDirection.normalized * moveDistance);
