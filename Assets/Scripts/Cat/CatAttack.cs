@@ -9,9 +9,16 @@ public class CatAttack : MonoBehaviour
     [SerializeField] private Projectile projectileAttack;
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackDamage = 1f;
+    [SerializeField] private Transform projectileSpawnPlace;
+    private RatManager rManager;
+    public bool hasTarget;
 
 
     // Start is called before the first frame update
+    void Awake()
+    {
+        rManager = FindObjectOfType<RatManager>();
+    }
     void Start()
     {
         SpawnProjectile();
@@ -28,11 +35,12 @@ public class CatAttack : MonoBehaviour
         if (target == null)
         {
             // Find new target
-            RatObject locatedTarget = default;
+            RatObject locatedTarget = LocateRat();
 
             if (locatedTarget != null)
             {
                 target = locatedTarget;
+
             }
             
 
@@ -43,6 +51,7 @@ public class CatAttack : MonoBehaviour
     public void SpawnProjectile()
     {
         Projectile spawnedProjectile = Instantiate(projectileAttack) as Projectile;
+        spawnedProjectile.transform.position = projectileSpawnPlace.position;
         spawnedProjectile.SetDamage(attackDamage);
         spawnedProjectile.SetTarget(target);
     }
@@ -52,5 +61,16 @@ public class CatAttack : MonoBehaviour
         {
             target.TakeDamage(attackDamage);
         }
+    }
+    private RatObject LocateRat()
+    {
+        RatObject closest = null;
+        for (int i = 0; i < rManager.allRats.Count; i++) {
+            if( closest == null || closest.DistFromExit() < rManager.allRats[i].DistFromExit())
+            {
+                closest = rManager.allRats[i];
+            }
+        }
+        return closest;
     }
 }
