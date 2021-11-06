@@ -1,6 +1,9 @@
-enum DamageTypes
+namespace Rat
 {
-    Standard,
-    Bomb,
-    Magic
+    enum DamageTypes
+    {
+        Standard,
+        Bomb,
+        Magic
+    }
 }

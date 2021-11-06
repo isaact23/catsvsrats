@@ -14,6 +14,7 @@ namespace Rat
         public GameObject hpGreen;
 
         private float hp;
+        private float timeElapsed;
         private float pathProgress;
 
         public void TakeDamage(float damage)
@@ -36,6 +37,7 @@ namespace Rat
         {
             GetComponent<SpriteRenderer>().sprite = ratType.sprite;
             hp = ratType.startHp;
+            timeElapsed = 0f;
             pathProgress = 0f;
             UpdateHpBar();
         }
@@ -61,7 +63,8 @@ namespace Rat
 
             // Find actual coordinate to place Rat
             float percentBetween = pathProgress - lowerCoordId;
-            Vector2 ratPos = Vector2.Lerp(lowerCoord, upperCoord, percentBetween);
+            Vector3 ratPos = Vector2.Lerp(lowerCoord, upperCoord, percentBetween);
+            ratPos.z = -1;
             transform.position = ratPos;
         }
 
@@ -89,12 +92,12 @@ namespace Rat
 
         private void ReachEnd()
         {
-            Debug.Log("This rat reached the end!");
             Die();
         }
 
         private void Die()
         {
+            Debug.Log("This rat has died.");
             Destroy(gameObject);
         }
     }
