@@ -20,9 +20,20 @@ namespace Rat
         private float pathProgress;
         private int currentSprite;
 
-        public void TakeDamage(float damage)
+        public void TakeDamage(DamageType damageType, float damage)
         {
-            hp -= damage;
+            float netDamage = damage;
+            if (damageType == DamageType.Standard) {
+                netDamage -= ratType.standardDefense;
+            } else if (damageType == DamageType.Bomb) {
+                netDamage -= ratType.bombDefense;
+            } else if (damageType == DamageType.Magic) {
+                netDamage -= ratType.magicDefense;
+            }
+
+            if (netDamage > 0) {
+                hp -= damage;
+            }
             if (hp <= 0f) {
                 Die();
             }

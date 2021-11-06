@@ -18,7 +18,7 @@ namespace Rat
         public float startHp = 100;
         public float speed = 1;
         public float spritesPerSecond = 2;
-        public float defense = 0;
+        public float standardDefense = 0;
         public float bombDefense = 0;
         public float magicDefense = 0;
     }

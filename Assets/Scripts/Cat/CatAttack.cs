@@ -10,6 +10,7 @@ public class CatAttack : MonoBehaviour
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackDamage = 1f;
     [SerializeField] private Transform projectileSpawnPlace;
+    [SerializeField] private DamageType damageType;
     private RatManager rManager;
     public bool hasTarget;
 
@@ -56,14 +57,14 @@ public class CatAttack : MonoBehaviour
     {
         Projectile spawnedProjectile = Instantiate(projectileAttack) as Projectile;
         spawnedProjectile.transform.position = projectileSpawnPlace.position;
-        spawnedProjectile.SetDamage(attackDamage);
+        spawnedProjectile.SetDamage(damageType, attackDamage);
         spawnedProjectile.SetTarget(target);
     }
     public void InstantAttack()
     {
         if (target != null)
         {
-            target.TakeDamage(attackDamage);
+            target.TakeDamage(damageType, attackDamage);
         }
     }
     private RatObject LocateRat()

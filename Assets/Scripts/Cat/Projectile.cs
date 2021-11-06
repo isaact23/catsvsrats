@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     private RatObject target;
     [SerializeField] private float flightSpeed = 1f;
     [SerializeField] private float attackDamage = 1f;
+    [SerializeField] private DamageType damageType;
     // Start is called before the first frame update
     void Start()
     { 
@@ -23,15 +24,16 @@ public class Projectile : MonoBehaviour
         if (Vector2.Dot(moveDirection, target.transform.position - transform.position) < 0)
         {
             // Target Reached
-            target.TakeDamage(attackDamage);
+            target.TakeDamage(damageType, attackDamage);
             Destroy(gameObject);
         }
         
     }
 
-    public void SetDamage(float damage) 
+    public void SetDamage(DamageType damageType, float damage)
     {
-        attackDamage = damage;
+        this.damageType = damageType;
+        this.attackDamage = damage;
     }
     public void SetTarget(RatObject target)
     {
