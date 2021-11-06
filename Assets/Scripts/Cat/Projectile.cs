@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rat;
 
 public class Projectile : MonoBehaviour
 {
-    private Rat target;
+    private RatObject target;
     [SerializeField] private float flightSpeed = 1f;
     [SerializeField] private float attackDamage = 1f;
     // Start is called before the first frame update
@@ -32,7 +33,7 @@ public class Projectile : MonoBehaviour
     {
         attackDamage = damage;
     }
-    public void SetTarget(Rat target)
+    public void SetTarget(RatObject target)
     {
         this.target = target;
     }

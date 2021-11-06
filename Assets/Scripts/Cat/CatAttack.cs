@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rat;
 
 public class CatAttack : MonoBehaviour
 {
-    [SerializeField] private Rat target;
+    [SerializeField] private RatObject target;
     [SerializeField] private Projectile projectileAttack;
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackDamage = 1f;
@@ -27,7 +28,7 @@ public class CatAttack : MonoBehaviour
         if (target == null)
         {
             // Find new target
-            Rat locatedTarget = default;
+            RatObject locatedTarget = default;
 
             if (locatedTarget != null)
             {

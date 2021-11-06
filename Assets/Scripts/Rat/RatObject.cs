@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Rat
 {
-    public class Rat : MonoBehaviour
+    public class RatObject : MonoBehaviour
     {
         public RatTypeScriptableObject ratType;
         public PathScriptableObject path;
