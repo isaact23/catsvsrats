@@ -10,7 +10,10 @@ public class Placeable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (pMaster == null)
+        {
+            pMaster = FindObjectOfType<PlacingManager>();
+        }
     }
 
     // Update is called once per frame
@@ -28,6 +31,7 @@ public class Placeable : MonoBehaviour
         {
             // CAT SOLD
             pMaster.money = pMaster.money + sellingCost;
+            pMaster.Deselect();
             Destroy(gameObject);
         }
     }
