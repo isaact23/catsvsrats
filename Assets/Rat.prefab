@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7606132476095759500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.00018655509, y: -0.16737261, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 7606132476435764244}
   m_Father: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ratType: {fileID: 11400000, guid: 5331c857956d8d340b5ace748417d3bd, type: 2}
   path: {fileID: 11400000, guid: 941720f204d0e704690fbe85c3cbf6a8, type: 2}
+  mutantPath: {fileID: 11400000, guid: bcda9702bc9c2c54aa0cc3a877d0a7cd, type: 2}
   hpRed: {fileID: 7606132476435764245}
   hpGreen: {fileID: 7606132477513200738}
 --- !u!1 &7606132476435764245

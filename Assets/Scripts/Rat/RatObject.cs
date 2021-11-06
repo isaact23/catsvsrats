@@ -116,7 +116,13 @@ namespace Rat
                 // TODO: TAKE DAMAGE!
                 Die();
             } else if (path.pathType == PathType.Mutate) {
-                Mutate();
+                if (mutantPath == null) {
+                    Debug.LogError("Rat is on mutant path but has no mutant path assigned.");
+                    Die();
+                }
+                else {
+                    Mutate();
+                }
             } else if (path.pathType == PathType.Exit) {
                 Die();
             }
