@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Placeable : MonoBehaviour
 {
-    [SerializeField] private PlacingMaster pMaster;
+    [SerializeField] private PlacingManager pMaster;
     [SerializeField] private int sellingCost;
 
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class Placeable : MonoBehaviour
     {
         
     }
-    public void Setup(PlacingMaster givenMaster)
+    public void Setup(PlacingManager givenMaster)
     {
         pMaster = givenMaster;
     }

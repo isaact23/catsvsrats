@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlacedownSpace : MonoBehaviour
 {
-    [SerializeField] private PlacingMaster pMaster;
+    [SerializeField] private PlacingManager pMaster;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class PlacedownSpace : MonoBehaviour
     {
         if (pMaster.IsPlacing())
         {
-            //if ()
+            pMaster.PlaceCat();
         }
     }
 }
