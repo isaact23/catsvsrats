@@ -114,6 +114,7 @@ namespace Rat
         {
             if (path.pathType == PathType.Cheese) {
                 // TODO: TAKE DAMAGE!
+                Die();
             } else if (path.pathType == PathType.Mutate) {
                 Mutate();
             } else if (path.pathType == PathType.Exit) {

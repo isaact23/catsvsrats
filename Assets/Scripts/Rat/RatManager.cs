@@ -7,6 +7,7 @@ namespace Rat
     public class RatManager : MonoBehaviour
     {
         public List<RatObject> allRats;
+        public Animator roundAnimator;
         
         // Start is called before the first frame update
         private void Awake()
@@ -14,13 +15,12 @@ namespace Rat
             allRats = new List<RatObject>();
         }
 
-        // Update is called once per frame
-        private void Update()
+        public void StartRound(int round)
         {
             
         }
 
-        public void StartRound(int round)
+        private void SpawnRat()
         {
             
         }
