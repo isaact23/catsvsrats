@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a8c1fb40b34b2489e337cb35564e5d, type: 3}
+  m_Name: FatRat
+  m_EditorClassIdentifier: 
+  nextGeneration: []
+  sprites:
+  - {fileID: 3870445331534448837, guid: ad36317270075a14ba7408090e15dff3, type: 3}
+  - {fileID: 4226416389655743467, guid: ad36317270075a14ba7408090e15dff3, type: 3}
+  - {fileID: -3940812885949743615, guid: ad36317270075a14ba7408090e15dff3, type: 3}
+  - {fileID: 7521529890319707402, guid: ad36317270075a14ba7408090e15dff3, type: 3}
+  - {fileID: -1601497036972547102, guid: ad36317270075a14ba7408090e15dff3, type: 3}
+  - {fileID: -5689300644905944197, guid: ad36317270075a14ba7408090e15dff3, type: 3}
+  - {fileID: -4065931347050889129, guid: ad36317270075a14ba7408090e15dff3, type: 3}
+  - {fileID: 1495781264056498570, guid: ad36317270075a14ba7408090e15dff3, type: 3}
+  eatingSprites: []
+  color: {r: 1, g: 1, b: 1, a: 1}
+  startHp: 10
+  speed: 0.75
+  spritesPerSecond: 5
+  standardDefense: 0
+  bombDefense: 0
+  magicDefense: 0

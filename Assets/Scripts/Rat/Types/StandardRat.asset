@@ -17,10 +17,14 @@ MonoBehaviour:
   sprites:
   - {fileID: 3937045386889021123, guid: 0ff939ba158862f4f8ebc999d0617315, type: 3}
   - {fileID: -2478485295355522901, guid: 0ff939ba158862f4f8ebc999d0617315, type: 3}
+  eatingSprites:
+  - {fileID: -5979012414689555622, guid: 8cdd2c3d9947e4d498a16b5cbafef816, type: 3}
+  - {fileID: 412684703862212483, guid: 8cdd2c3d9947e4d498a16b5cbafef816, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
-  startHp: 100
+  flip: 1
+  startHp: 3
   speed: 2.5
   spritesPerSecond: 2
-  defense: 0
+  standardDefense: 0
   bombDefense: 0
   magicDefense: 0

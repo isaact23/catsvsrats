@@ -12,7 +12,9 @@ namespace Rat
         
         // Appearance
         public Sprite[] sprites;
+        public Sprite[] eatingSprites;
         public Color color = Color.white;
+        public bool flip;
         
         // Attributes
         public float startHp = 100;

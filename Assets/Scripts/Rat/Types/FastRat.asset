@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextGeneration: []
   sprites:
-  - {fileID: 3937045386889021123, guid: 0ff939ba158862f4f8ebc999d0617315, type: 3}
-  - {fileID: -2478485295355522901, guid: 0ff939ba158862f4f8ebc999d0617315, type: 3}
-  color: {r: 1, g: 0, b: 0, a: 1}
-  startHp: 100
+  - {fileID: 6338945522107625866, guid: 4150125dee05ed84d9c699800043b6b8, type: 3}
+  - {fileID: 1584969823094637635, guid: 4150125dee05ed84d9c699800043b6b8, type: 3}
+  eatingSprites:
+  - {fileID: 6338945522107625866, guid: 4150125dee05ed84d9c699800043b6b8, type: 3}
+  - {fileID: 1584969823094637635, guid: 4150125dee05ed84d9c699800043b6b8, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  flip: 1
+  startHp: 5
   speed: 5
   spritesPerSecond: 3.5
-  defense: 0
+  standardDefense: 0
   bombDefense: 0
   magicDefense: 0

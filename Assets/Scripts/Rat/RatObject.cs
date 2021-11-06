@@ -6,6 +6,7 @@ namespace Rat
 {
     public class RatObject : MonoBehaviour
     {
+        public RatManager ratManager;
         public RatTypeScriptableObject ratType;
         public PathScriptableObject path;
         public PathScriptableObject mutantPath;
@@ -15,10 +16,12 @@ namespace Rat
         public GameObject hpGreen;
 
         private SpriteRenderer spriteRenderer;
+        private Vector3 cheesePosition;
         private float hp;
         private float timeElapsed;
         private float pathProgress;
         private int currentSprite;
+        private bool eatingCheese = false;
 
         public void TakeDamage(DamageType damageType, float damage)
         {
@@ -56,6 +59,14 @@ namespace Rat
             pathProgress = 0f;
             currentSprite = -1;
             UpdateHpBar();
+            
+            // Flip
+            if (ratType.flip) {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else {
+                transform.localScale = new Vector3(1, 1, 1);
+            }
         }
 
         // Update is called once per frame
@@ -66,35 +77,49 @@ namespace Rat
 
             UpdateSprite();
 
-            // Find bounding coordinates
-            float lowerCoordFloat = Mathf.Floor(pathProgress);
-            int lowerCoordId = (int) lowerCoordFloat;
-            float upperCoordFloat = Mathf.Ceil(pathProgress);
-            int upperCoordId = (int) upperCoordFloat;
+            if (!eatingCheese) {
+                // Find bounding coordinates
+                float lowerCoordFloat = Mathf.Floor(pathProgress);
+                int lowerCoordId = (int) lowerCoordFloat;
+                float upperCoordFloat = Mathf.Ceil(pathProgress);
+                int upperCoordId = (int) upperCoordFloat;
 
-            if (upperCoordId >= path.coordinates.Length) {
-                ReachEnd();
-                return;
+                if (upperCoordId >= path.coordinates.Length) {
+                    ReachEnd();
+                    return;
+                }
+
+                Vector2 lowerCoord = path.coordinates[lowerCoordId];
+                Vector2 upperCoord = path.coordinates[upperCoordId];
+
+                // Find actual coordinate to place Rat
+                float percentBetween = pathProgress - lowerCoordId;
+                Vector3 ratPos = Vector2.Lerp(lowerCoord, upperCoord, percentBetween);
+                ratPos.z = -1;
+                transform.position = ratPos;
             }
-
-            Vector2 lowerCoord = path.coordinates[lowerCoordId];
-            Vector2 upperCoord = path.coordinates[upperCoordId];
-
-            // Find actual coordinate to place Rat
-            float percentBetween = pathProgress - lowerCoordId;
-            Vector3 ratPos = Vector2.Lerp(lowerCoord, upperCoord, percentBetween);
-            ratPos.z = -1;
-            transform.position = ratPos;
         }
         
         private void UpdateSprite()
         {
-            if (ratType.sprites.Length != 0) {
-                // Determine sprite to show
-                int oldSprite = currentSprite;
-                currentSprite = ((int)(timeElapsed * ratType.spritesPerSecond)) % ratType.sprites.Length;
-                if (oldSprite != currentSprite) {
-                    spriteRenderer.sprite = ratType.sprites[currentSprite];
+            if (eatingCheese) {
+                if (ratType.eatingSprites.Length != 0) {
+                    // Determine sprite to show
+                    int oldSprite = currentSprite;
+                    currentSprite = ((int)(timeElapsed * ratType.spritesPerSecond)) % ratType.eatingSprites.Length;
+                    if (oldSprite != currentSprite) {
+                        spriteRenderer.sprite = ratType.eatingSprites[currentSprite];
+                    }
+                }
+            }
+            else {
+                if (ratType.sprites.Length != 0) {
+                    // Determine sprite to show
+                    int oldSprite = currentSprite;
+                    currentSprite = ((int)(timeElapsed * ratType.spritesPerSecond)) % ratType.sprites.Length;
+                    if (oldSprite != currentSprite) {
+                        spriteRenderer.sprite = ratType.sprites[currentSprite];
+                    }
                 }
             }
         }
@@ -124,8 +149,10 @@ namespace Rat
         private void ReachEnd()
         {
             if (path.pathType == PathType.Cheese) {
-                // TODO: TAKE DAMAGE!
-                Die();
+                eatingCheese = true;
+                cheesePosition = ratManager.GetCheesePosition();
+                pathProgress = 0f;
+                transform.position = cheesePosition;
             } else if (path.pathType == PathType.Mutate) {
                 if (mutantPath == null) {
                     Debug.LogError("Rat is on mutant path but has no mutant path assigned.");
@@ -162,6 +189,7 @@ namespace Rat
 
         private void Die()
         {
+            ratManager.RemoveRat(this);
             Destroy(gameObject);
         }
     }

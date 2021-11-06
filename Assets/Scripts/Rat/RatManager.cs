@@ -10,9 +10,11 @@ namespace Rat
         public List<RatObject> allRats;
         public Animator roundAnimator;
         public RatObject ratPrefab;
-
+        public Vector3[] cheesePositions;
         public List<RatTypeScriptableObject> ratTypeIndex;
         public List<PathScriptableObject> pathIndex;
+        
+        private int lastCheesePosition = 0;
         
         // Start is called before the first frame update
         private void Awake()
@@ -43,6 +45,24 @@ namespace Rat
                 newRat.ratType = ratTypeIndex[ratType];
                 newRat.path = pathIndex[path];
             }
+
+            newRat.ratManager = this;
+            allRats.Add(newRat);
+        }
+
+        public Vector3 GetCheesePosition()
+        {
+            lastCheesePosition++;
+            if (lastCheesePosition >= cheesePositions.Length) {
+                lastCheesePosition = 0;
+            }
+
+            return cheesePositions[lastCheesePosition];
+        }
+
+        public void RemoveRat(RatObject rat)
+        {
+            allRats.Remove(rat);
         }
     }
 }
