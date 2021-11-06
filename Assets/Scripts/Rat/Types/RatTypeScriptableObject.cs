@@ -11,14 +11,15 @@ namespace Rat
         public RatTypeScriptableObject[] nextGeneration;
         
         // Appearance
-        public Color color;
-        public Sprite sprite;
+        public Sprite[] sprites;
+        public Color color = Color.white;
         
         // Attributes
-        public float startHp;
-        public float speed;
-        public float defense;
-        public float bombDefense;
-        public float magicDefense;
+        public float startHp = 100;
+        public float speed = 1;
+        public float spritesPerSecond = 2;
+        public float defense = 0;
+        public float bombDefense = 0;
+        public float magicDefense = 0;
     }
 }
