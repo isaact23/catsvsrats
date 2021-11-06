@@ -13,9 +13,11 @@ namespace Rat
         public GameObject hpRed;
         public GameObject hpGreen;
 
+        private SpriteRenderer spriteRenderer;
         private float hp;
         private float timeElapsed;
         private float pathProgress;
+        private int currentSprite;
 
         public void TakeDamage(float damage)
         {
@@ -35,17 +37,21 @@ namespace Rat
         // Start is called before the first frame update
         private void Start()
         {
-            GetComponent<SpriteRenderer>().sprite = ratType.sprite;
+            spriteRenderer = GetComponent<SpriteRenderer>();
             hp = ratType.startHp;
             timeElapsed = 0f;
             pathProgress = 0f;
+            currentSprite = 0;
             UpdateHpBar();
         }
 
         // Update is called once per frame
         private void Update()
         {
-            pathProgress += Time.deltaTime * ratType.speed;
+            timeElapsed += Time.deltaTime;
+            pathProgress = timeElapsed * ratType.speed;
+
+            UpdateSprite();
 
             // Find bounding coordinates
             float lowerCoordFloat = Mathf.Floor(pathProgress);
@@ -66,6 +72,18 @@ namespace Rat
             Vector3 ratPos = Vector2.Lerp(lowerCoord, upperCoord, percentBetween);
             ratPos.z = -1;
             transform.position = ratPos;
+        }
+        
+        private void UpdateSprite()
+        {
+            if (ratType.sprites.Length != 0) {
+                // Determine sprite to show
+                int oldSprite = currentSprite;
+                currentSprite = ((int)(timeElapsed * ratType.spritesPerSecond)) % ratType.sprites.Length;
+                if (oldSprite != currentSprite) {
+                    spriteRenderer.sprite = ratType.sprites[currentSprite];
+                }
+            }
         }
 
         private void UpdateHpBar()
