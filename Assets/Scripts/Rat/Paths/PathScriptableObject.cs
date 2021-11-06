@@ -8,6 +8,14 @@ namespace Rat
     public class PathScriptableObject : ScriptableObject
     {
         public Vector2[] coordinates;
+        public PathType pathType;
+    }
+
+    public enum PathType
+    {
+        Mutate,
+        Cheese,
+        Exit
     }
 }
 

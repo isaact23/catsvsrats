@@ -133,11 +133,15 @@ PrefabInstance:
     - target: {fileID: 7606132476095759497, guid: ffafd8738eff7e542a5372ebe081ce29, type: 3}
       propertyPath: path
       value: 
-      objectReference: {fileID: 11400000, guid: bcda9702bc9c2c54aa0cc3a877d0a7cd, type: 2}
+      objectReference: {fileID: 11400000, guid: 56e5310550de56e4d9ee1b20efc4bc48, type: 2}
     - target: {fileID: 7606132476095759497, guid: ffafd8738eff7e542a5372ebe081ce29, type: 3}
       propertyPath: ratType
       value: 
       objectReference: {fileID: 11400000, guid: 5331c857956d8d340b5ace748417d3bd, type: 2}
+    - target: {fileID: 7606132476095759497, guid: ffafd8738eff7e542a5372ebe081ce29, type: 3}
+      propertyPath: mutantPath
+      value: 
+      objectReference: {fileID: 11400000, guid: bcda9702bc9c2c54aa0cc3a877d0a7cd, type: 2}
     - target: {fileID: 7606132476095759500, guid: ffafd8738eff7e542a5372ebe081ce29, type: 3}
       propertyPath: m_Name
       value: Rat
@@ -189,6 +193,10 @@ PrefabInstance:
     - target: {fileID: 7606132476095759502, guid: ffafd8738eff7e542a5372ebe081ce29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606132476095759503, guid: ffafd8738eff7e542a5372ebe081ce29, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffafd8738eff7e542a5372ebe081ce29, type: 3}
@@ -2503,6 +2511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ratType: {fileID: 11400000, guid: 5331c857956d8d340b5ace748417d3bd, type: 2}
   path: {fileID: 11400000, guid: 941720f204d0e704690fbe85c3cbf6a8, type: 2}
+  mutantPath: {fileID: 0}
   hpRed: {fileID: 1138823082}
   hpGreen: {fileID: 0}
 --- !u!4 &1138823085

@@ -8,6 +8,7 @@ namespace Rat
     {
         public RatTypeScriptableObject ratType;
         public PathScriptableObject path;
+        public PathScriptableObject mutantPath;
 
         // HP bar
         public GameObject hpRed;
@@ -38,6 +39,7 @@ namespace Rat
         private void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.color = ratType.color;
             hp = ratType.startHp;
             timeElapsed = 0f;
             pathProgress = 0f;
@@ -110,12 +112,38 @@ namespace Rat
 
         private void ReachEnd()
         {
-            Die();
+            if (path.pathType == PathType.Cheese) {
+                // TODO: TAKE DAMAGE!
+            } else if (path.pathType == PathType.Mutate) {
+                Mutate();
+            } else if (path.pathType == PathType.Exit) {
+                Die();
+            }
+        }
+
+        private void Mutate()
+        {
+            // Reset to beginning of the mutant track
+            path = mutantPath;
+            timeElapsed = 0f;
+            pathProgress = 0f;
+
+            // Choose a new rat type for the next generation
+            int ratTypeCount = ratType.nextGeneration.Length;
+            if (ratTypeCount > 0) {
+                ratType = ratType.nextGeneration[Random.Range(0, ratTypeCount)];
+            }
+            
+            hp = ratType.startHp;
+            spriteRenderer.color = ratType.color;
+            
+            // Force update sprite
+            currentSprite = -1;
+            UpdateSprite();
         }
 
         private void Die()
         {
-            Debug.Log("This rat has died.");
             Destroy(gameObject);
         }
     }

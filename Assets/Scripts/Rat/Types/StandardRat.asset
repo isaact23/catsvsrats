@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a8c1fb40b34b2489e337cb35564e5d, type: 3}
   m_Name: StandardRat
   m_EditorClassIdentifier: 
-  nextGeneration: []
+  nextGeneration:
+  - {fileID: 11400000, guid: 002036fc92730f54fac423fec1197cf7, type: 2}
   sprites:
   - {fileID: 3937045386889021123, guid: 0ff939ba158862f4f8ebc999d0617315, type: 3}
   - {fileID: -2478485295355522901, guid: 0ff939ba158862f4f8ebc999d0617315, type: 3}
-  color: {r: 1, g: 1, b: 1, a: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
   startHp: 100
   speed: 2.5
   spritesPerSecond: 2
