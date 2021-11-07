@@ -11,6 +11,7 @@ public class CatAttack : MonoBehaviour
     [SerializeField] private float attackDamage = 1f;
     [SerializeField] private Transform projectileSpawnPlace;
     [SerializeField] private DamageType damageType;
+    private Animator anim;
     private RatManager rManager;
     public bool hasTarget;
 
@@ -19,6 +20,7 @@ public class CatAttack : MonoBehaviour
     void Awake()
     {
         rManager = FindObjectOfType<RatManager>();
+        anim = GetComponent<Animator>();
     }
     public void Setup(RatManager givenManager)
     {
@@ -51,6 +53,7 @@ public class CatAttack : MonoBehaviour
 
             
         }
+        anim.SetBool("IsAttacking", (target != null));
     }
 
     public void SpawnProjectile()
