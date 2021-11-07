@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a8c1fb40b34b2489e337cb35564e5d, type: 3}
+  m_Name: RoboRat
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 7183526490947331983, guid: 34bf9eb2d0552184e8715a08533db63d, type: 3}
+  - {fileID: -8540945755091319306, guid: 34bf9eb2d0552184e8715a08533db63d, type: 3}
+  eatingSprites:
+  - {fileID: -9029356683351753444, guid: a68f516ab5096c54ab74c91509172703, type: 3}
+  - {fileID: -4946980834757415377, guid: a68f516ab5096c54ab74c91509172703, type: 3}
+  - {fileID: 3516334426981905080, guid: a68f516ab5096c54ab74c91509172703, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  flip: 0
+  startHp: 10
+  speed: 4
+  spritesPerSecond: 2
+  standardDefense: 0
+  bombDefense: 2
+  magicDefense: 0
+  bitesPerSecond: 3
+  biteDamage: 1
+  cheesePosition: 0
+  cashDrop: 15

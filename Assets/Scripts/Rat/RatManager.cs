@@ -57,8 +57,13 @@ namespace Rat
             allRats.Add(newRat);
         }
 
-        public Vector3 GetCheesePosition()
+        public Vector3 GetCheesePosition(int pos=-1)
         {
+            // Optional parameter pos overrides which position to grab.
+            if (pos >= 0 && pos < cheesePositions.Length) {
+                return cheesePositions[pos];
+            }
+            
             lastCheesePosition++;
             if (lastCheesePosition >= cheesePositions.Length) {
                 lastCheesePosition = 0;

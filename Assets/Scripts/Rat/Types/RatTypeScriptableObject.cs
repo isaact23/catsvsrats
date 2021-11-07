@@ -14,7 +14,7 @@ namespace Rat
         public bool flip;
         
         // Attributes
-        public float startHp = 100;
+        public float startHp = 5;
         public float speed = 1;
         public float spritesPerSecond = 2;
         public float standardDefense = 0;
@@ -22,6 +22,7 @@ namespace Rat
         public float magicDefense = 0;
         public float bitesPerSecond = 1f;
         public int biteDamage = 1;
+        public int cheesePosition = -1;
         
         // Cash
         public int cashDrop;

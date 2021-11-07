@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a8c1fb40b34b2489e337cb35564e5d, type: 3}
+  m_Name: DemonRat
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 87b2bd6893cca344d8eb5eaf10735f11, type: 3}
+  - {fileID: 21300000, guid: 5c2fd63a084b9964f8ecf4ce4442a905, type: 3}
+  - {fileID: 21300000, guid: 855f97f301ef3f1409e6e822b2be238f, type: 3}
+  - {fileID: 21300000, guid: 89552bd4f718f074dbe6184f2ecab761, type: 3}
+  eatingSprites:
+  - {fileID: 1133500752198552980, guid: 7a4e9e4ab93daf645862a60aae900713, type: 3}
+  - {fileID: 1639591331289472205, guid: 7a4e9e4ab93daf645862a60aae900713, type: 3}
+  - {fileID: 5682935068799435583, guid: 7a4e9e4ab93daf645862a60aae900713, type: 3}
+  - {fileID: 7945966874356042097, guid: 7a4e9e4ab93daf645862a60aae900713, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  flip: 0
+  startHp: 10
+  speed: 3
+  spritesPerSecond: 2
+  standardDefense: 0
+  bombDefense: 0
+  magicDefense: 2
+  bitesPerSecond: 3
+  biteDamage: 1
+  cheesePosition: -1
+  cashDrop: 10

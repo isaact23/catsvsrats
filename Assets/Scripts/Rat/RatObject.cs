@@ -172,7 +172,7 @@ namespace Rat
         {
             if (path.pathType == PathType.Cheese) {
                 eatingCheese = true;
-                cheesePosition = ratManager.GetCheesePosition();
+                cheesePosition = ratManager.GetCheesePosition(ratType.cheesePosition);
                 pathProgress = 0f;
                 transform.position = cheesePosition;
             } else if (path.pathType == PathType.Mutate) {
