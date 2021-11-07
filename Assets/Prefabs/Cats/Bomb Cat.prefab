@@ -114,9 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  projectileAttack: {fileID: 8049905939478108103, guid: 7b13d34361c3dcf4db7dfbb2ea473299, type: 3}
-  attackRange: 8
-  attackDamage: 1
+  projectileAttack: {fileID: 0}
+  attackRange: 3
+  attackDamage: 2
   projectileSpawnPlace: {fileID: 3442762282117355269}
   damageType: 0
   hasTarget: 0

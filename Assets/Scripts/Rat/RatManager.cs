@@ -30,7 +30,7 @@ namespace Rat
 
         public void StartRound(int round)
         {
-            
+            //roundAnimator.Play();
         }
 
         // Digit 1 (LSD) - path ID
