@@ -30,4 +30,4 @@ MonoBehaviour:
   magicDefense: 0
   bitesPerSecond: 2
   biteDamage: 1
-  cashDrop: 50
+  cashDrop: 8

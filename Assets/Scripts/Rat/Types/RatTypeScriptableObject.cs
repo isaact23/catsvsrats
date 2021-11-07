@@ -9,6 +9,9 @@ namespace Rat
     {
         // Evolution
         public RatTypeScriptableObject[] nextGeneration;
+        public RatTypeScriptableObject standardDefenseGeneration;
+        public RatTypeScriptableObject bombDefenseGeneration;
+        public RatTypeScriptableObject magicDefenseGeneration;
         
         // Appearance
         public Sprite[] sprites;

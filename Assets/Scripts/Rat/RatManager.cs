@@ -14,6 +14,7 @@ namespace Rat
         public List<RatTypeScriptableObject> ratTypeIndex;
         public List<PathScriptableObject> pathIndex;
         public HealthManager healthManager;
+        public PlacingManager placingManager;
 
         private int lastCheesePosition = 0;
         
@@ -52,6 +53,7 @@ namespace Rat
 
             newRat.ratManager = this;
             newRat.healthManager = healthManager;
+            newRat.placingManager = placingManager;
             allRats.Add(newRat);
         }
 

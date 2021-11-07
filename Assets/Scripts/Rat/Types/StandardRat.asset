@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: StandardRat
   m_EditorClassIdentifier: 
   nextGeneration:
-  - {fileID: 11400000, guid: 002036fc92730f54fac423fec1197cf7, type: 2}
+  - {fileID: 11400000, guid: 92c7e8e1cb70b5a43b8054c9dfe1f147, type: 2}
+  - {fileID: 11400000, guid: 7cc21f2a9e268ec49bee2173b6e497cb, type: 2}
+  - {fileID: 11400000, guid: 5893ee210715e444483c59e80aaa5577, type: 2}
+  - {fileID: 11400000, guid: 8ad51f06f9cfb5f40920d839e4b00ac9, type: 2}
+  - {fileID: 11400000, guid: d41ab1428cc0ca64ea587180b72f9e31, type: 2}
+  - {fileID: 11400000, guid: 4f4d0dc25cbc6814bac516669b50d9f0, type: 2}
   sprites:
   - {fileID: 3937045386889021123, guid: 0ff939ba158862f4f8ebc999d0617315, type: 3}
   - {fileID: -2478485295355522901, guid: 0ff939ba158862f4f8ebc999d0617315, type: 3}
@@ -28,4 +33,6 @@ MonoBehaviour:
   standardDefense: 0
   bombDefense: 0
   magicDefense: 0
-  cashDrop: 25
+  bitesPerSecond: 1
+  biteDamage: 1
+  cashDrop: 4

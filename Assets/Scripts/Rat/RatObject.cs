@@ -8,6 +8,7 @@ namespace Rat
     {
         public RatManager ratManager;
         public HealthManager healthManager;
+        public PlacingManager placingManager;
         public RatTypeScriptableObject ratType;
         public PathScriptableObject path;
         public PathScriptableObject mutantPath;
@@ -24,16 +25,22 @@ namespace Rat
         private int currentSprite;
         private bool eatingCheese = false;
         private float secsSinceLastBite = 0f;
+        private float standardDamage = 0f;
+        private float bombDamage = 0f;
+        private float magicDamage = 0f;
 
         public void TakeDamage(DamageType damageType, float damage)
         {
             float netDamage = damage;
             if (damageType == DamageType.Standard) {
                 netDamage -= ratType.standardDefense;
+                standardDamage += netDamage;
             } else if (damageType == DamageType.Bomb) {
                 netDamage -= ratType.bombDefense;
+                bombDamage += netDamage;
             } else if (damageType == DamageType.Magic) {
                 netDamage -= ratType.magicDefense;
+                magicDamage += netDamage;
             }
 
             if (netDamage > 0) {
@@ -189,9 +196,18 @@ namespace Rat
             pathProgress = 0f;
 
             // Choose a new rat type for the next generation
-            int ratTypeCount = ratType.nextGeneration.Length;
-            if (ratTypeCount > 0) {
-                ratType = ratType.nextGeneration[Random.Range(0, ratTypeCount)];
+            if (standardDamage > bombDamage && standardDamage > magicDamage) {
+                ratType = ratType.standardDefenseGeneration;
+            } else if (bombDamage > standardDamage && bombDamage > magicDamage) {
+                ratType = ratType.bombDefenseGeneration;
+            } else if (magicDamage > standardDamage && magicDamage > bombDamage) {
+                ratType = ratType.magicDefenseGeneration;
+            }
+            else {
+                int ratTypeCount = ratType.nextGeneration.Length;
+                if (ratTypeCount > 0) {
+                    ratType = ratType.nextGeneration[Random.Range(0, ratTypeCount)];
+                }
             }
             
             hp = ratType.startHp;
@@ -206,6 +222,7 @@ namespace Rat
         private void Die()
         {
             ratManager.RemoveRat(this);
+            placingManager.money += ratType.cashDrop;
             Destroy(gameObject);
         }
     }
