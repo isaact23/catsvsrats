@@ -7,6 +7,7 @@ namespace Rat
     public class RatObject : MonoBehaviour
     {
         public RatManager ratManager;
+        public HealthManager healthManager;
         public RatTypeScriptableObject ratType;
         public PathScriptableObject path;
         public PathScriptableObject mutantPath;
@@ -22,6 +23,7 @@ namespace Rat
         private float pathProgress;
         private int currentSprite;
         private bool eatingCheese = false;
+        private float secsSinceLastBite = 0f;
 
         public void TakeDamage(DamageType damageType, float damage)
         {
@@ -59,14 +61,7 @@ namespace Rat
             pathProgress = 0f;
             currentSprite = -1;
             UpdateHpBar();
-            
-            // Flip
-            if (ratType.flip) {
-                spriteRenderer.flipX = true;
-            }
-            else {
-                spriteRenderer.flipX = false;
-            }
+            Orient();
         }
 
         // Update is called once per frame
@@ -77,27 +72,48 @@ namespace Rat
 
             UpdateSprite();
 
-            if (!eatingCheese) {
-                // Find bounding coordinates
-                float lowerCoordFloat = Mathf.Floor(pathProgress);
-                int lowerCoordId = (int) lowerCoordFloat;
-                float upperCoordFloat = Mathf.Ceil(pathProgress);
-                int upperCoordId = (int) upperCoordFloat;
+            if (eatingCheese) {
+                secsSinceLastBite += Time.deltaTime;
+                if (secsSinceLastBite > 1 / ratType.bitesPerSecond) {
+                    secsSinceLastBite = 0f;
+                    healthManager.SubtractHealth(ratType.biteDamage);
+                }
+            } else {
+                UpdatePosition();
+            }
+        }
+
+        // Flip sprite in direction according to RatTypeScriptableObject
+        private void Orient()
+        {
+            if (ratType.flip) {
+                spriteRenderer.flipX = true;
+            }
+            else {
+                spriteRenderer.flipX = false;
+            }
+        }
+
+        private void UpdatePosition() {
+            // Find bounding coordinates
+            float lowerCoordFloat = Mathf.Floor(pathProgress);
+            int lowerCoordId = (int) lowerCoordFloat;
+            float upperCoordFloat = Mathf.Ceil(pathProgress);
+            int upperCoordId = (int) upperCoordFloat;
 
                 if (upperCoordId >= path.coordinates.Length) {
-                    ReachEnd();
-                    return;
-                }
-
-                Vector2 lowerCoord = path.coordinates[lowerCoordId];
-                Vector2 upperCoord = path.coordinates[upperCoordId];
-
-                // Find actual coordinate to place Rat
-                float percentBetween = pathProgress - lowerCoordId;
-                Vector3 ratPos = Vector2.Lerp(lowerCoord, upperCoord, percentBetween);
-                ratPos.z = -1;
-                transform.position = ratPos;
+                ReachEnd();
+                return;
             }
+
+            Vector2 lowerCoord = path.coordinates[lowerCoordId];
+            Vector2 upperCoord = path.coordinates[upperCoordId];
+
+            // Find actual coordinate to place Rat
+            float percentBetween = pathProgress - lowerCoordId;
+            Vector3 ratPos = Vector2.Lerp(lowerCoord, upperCoord, percentBetween);
+            ratPos.z = -1;
+            transform.position = ratPos;
         }
         
         private void UpdateSprite()
@@ -180,10 +196,11 @@ namespace Rat
             
             hp = ratType.startHp;
             spriteRenderer.color = ratType.color;
-            
+
             // Force update sprite
             currentSprite = -1;
             UpdateSprite();
+            Orient();
         }
 
         private void Die()

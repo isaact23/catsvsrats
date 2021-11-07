@@ -31,4 +31,6 @@ MonoBehaviour:
   standardDefense: 0
   bombDefense: 0
   magicDefense: 0
+  bitesPerSecond: 5
+  biteDamage: 1
   cashDrop: 100

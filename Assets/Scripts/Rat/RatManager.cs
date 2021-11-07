@@ -13,13 +13,19 @@ namespace Rat
         public Vector3[] cheesePositions;
         public List<RatTypeScriptableObject> ratTypeIndex;
         public List<PathScriptableObject> pathIndex;
-        
+        public HealthManager healthManager;
+
         private int lastCheesePosition = 0;
         
-        // Start is called before the first frame update
+
         private void Awake()
         {
             allRats = new List<RatObject>();
+        }
+
+        private void Start()
+        {
+            
         }
 
         public void StartRound(int round)
@@ -45,6 +51,7 @@ namespace Rat
             }
 
             newRat.ratManager = this;
+            newRat.healthManager = healthManager;
             allRats.Add(newRat);
         }
 
