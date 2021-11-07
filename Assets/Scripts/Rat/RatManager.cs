@@ -77,7 +77,7 @@ namespace Rat
 
         public void StartRound()
         {
-            buttonRefresh = 5f;
+            buttonRefresh = 3f;
             roundIndex++;
             roundAnimator.SetInteger("Round", roundIndex);
             roundAnimator.SetTrigger("StartRound");
