@@ -12,7 +12,7 @@ namespace Rat
         public Sprite[] eatingSprites;
         public Color color = Color.white;
         public bool flip;
-        
+
         // Attributes
         public float startHp = 5;
         public float speed = 1;
@@ -25,9 +25,10 @@ namespace Rat
         public int cheesePosition = -1;
         
         // Sounds
-        public AudioClip walk;
-        public AudioClip eat;
-        public float soundsPerSec = 0.15f;
+        public AudioClip walkSound;
+        public AudioClip eatSound;
+        public AudioClip hitByBombSound;
+        public float soundsPerSecond = 0.15f;
         
         // Cash
         public int cashDrop;

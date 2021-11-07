@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a8c1fb40b34b2489e337cb35564e5d, type: 3}
   m_Name: FastRat
   m_EditorClassIdentifier: 
-  nextGeneration:
-  - {fileID: 11400000, guid: 973960f9e9058ca4282ce6cc45959055, type: 2}
   sprites:
   - {fileID: 6338945522107625866, guid: 4150125dee05ed84d9c699800043b6b8, type: 3}
   - {fileID: 1584969823094637635, guid: 4150125dee05ed84d9c699800043b6b8, type: 3}
@@ -30,4 +28,8 @@ MonoBehaviour:
   magicDefense: 0
   bitesPerSecond: 2
   biteDamage: 1
+  cheesePosition: -1
+  walkSound: {fileID: 0}
+  eatSound: {fileID: 8300000, guid: e030f6dbc23ef634c9a56ff5b5ff13fc, type: 3}
+  soundsPerSecond: 0.15
   cashDrop: 8

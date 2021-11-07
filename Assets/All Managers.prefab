@@ -67,6 +67,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bcda9702bc9c2c54aa0cc3a877d0a7cd, type: 2}
   healthManager: {fileID: 7509082435388086298}
   placingManager: {fileID: 0}
+  mutateSound: {fileID: 8300000, guid: d7b997a60ee53654199ef7b2e6b15430, type: 3}
 --- !u!95 &7509082435388086278
 Animator:
   serializedVersion: 3

@@ -16,17 +16,24 @@ namespace Rat
         public List<PathScriptableObject> pathIndex;
         public HealthManager healthManager;
         public PlacingManager placingManager;
+
         private int roundIndex;
         [SerializeField] private int maxRounds = 5;
         private bool gameOn = true;
         private float buttonRefresh = 0f;
 
+        public AudioClip mutateSound;
+        public AudioClip deathSound;
+
+
+        private AudioSource audioSource;
         private int lastCheesePosition = 0;
         
 
         private void Awake()
         {
             allRats = new List<RatObject>();
+
             gameOn = true;
 
         }
@@ -63,6 +70,9 @@ namespace Rat
         private void Start()
         {
             roundIndex = 0;
+
+            audioSource = GetComponent<AudioSource>();
+
         }
 
         public void StartRound()
@@ -94,6 +104,7 @@ namespace Rat
             newRat.ratManager = this;
             newRat.healthManager = healthManager;
             newRat.placingManager = placingManager;
+            newRat.mutateSound = mutateSound;
             allRats.Add(newRat);
         }
 
@@ -115,6 +126,8 @@ namespace Rat
         public void RemoveRat(RatObject rat)
         {
             allRats.Remove(rat);
+            audioSource.clip = deathSound;
+            audioSource.Play();
         }
     }
 }

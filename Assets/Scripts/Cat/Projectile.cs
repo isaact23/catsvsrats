@@ -11,11 +11,13 @@ public class Projectile : MonoBehaviour
     [SerializeField] private DamageType damageType;
     [SerializeField] private Explosion explode;
     private RatManager rManager;
+    private AudioClip hitSound;
+    private AudioSource audioSource;
     [SerializeField] private bool rotatesForward = false;
-    // Start is called before the first frame update
-    void Start()
-    { 
 
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -39,6 +41,10 @@ public class Projectile : MonoBehaviour
         if (Vector2.Dot(moveDirection, target.transform.position - transform.position) < 0)
         {
             // Target Reached
+            if (hitSound != null) {
+                audioSource.clip = hitSound;
+                audioSource.Play();
+            }
             if (explode != null)
             {
                 Explosion created = Instantiate(explode, target.transform.position, Quaternion.identity) as Explosion;
@@ -66,5 +72,10 @@ public class Projectile : MonoBehaviour
     public void SetManager(RatManager givenManager)
     {
         rManager = givenManager;
+    }
+
+    public void SetHitSound(AudioClip hitSound)
+    {
+        this.hitSound = hitSound;
     }
 }

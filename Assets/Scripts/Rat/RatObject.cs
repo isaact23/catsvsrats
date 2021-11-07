@@ -12,11 +12,13 @@ namespace Rat
         public RatTypeScriptableObject ratType;
         public PathScriptableObject path;
         public PathScriptableObject mutantPath;
+        public AudioClip mutateSound;
 
         // HP bar
         public GameObject hpRed;
         public GameObject hpGreen;
 
+        private AudioSource audioSource;
         private SpriteRenderer spriteRenderer;
         private Vector3 cheesePosition;
         private float hp;
@@ -25,6 +27,7 @@ namespace Rat
         private int currentSprite;
         private bool eatingCheese = false;
         private float secsSinceLastBite = 0f;
+        private float secsSinceLastSound = 0f;
         private float standardDamage = 0f;
         private float bombDamage = 0f;
         private float magicDamage = 0f;
@@ -36,6 +39,8 @@ namespace Rat
                 netDamage -= ratType.standardDefense;
                 standardDamage += netDamage;
             } else if (damageType == DamageType.Bomb) {
+                audioSource.clip = ratType.hitByBombSound;
+                audioSource.Play();
                 netDamage -= ratType.bombDefense;
                 bombDamage += netDamage;
             } else if (damageType == DamageType.Magic) {
@@ -58,10 +63,15 @@ namespace Rat
             return pathProgress - path.coordinates.Length;
         }
 
+        private void Awake()
+        {
+            audioSource = GetComponent<AudioSource>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
         // Start is called before the first frame update
         private void Start()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
             spriteRenderer.color = ratType.color;
             hp = ratType.startHp;
             timeElapsed = 0f;
@@ -79,7 +89,19 @@ namespace Rat
 
             UpdateSprite();
 
+            // Determine if it's time to make sound
+            secsSinceLastSound += Time.deltaTime;
+            bool doSound = false;
+            if (secsSinceLastSound > 1 / ratType.soundsPerSecond) {
+                secsSinceLastSound = 0f;
+                doSound = true;
+            }
+            
             if (eatingCheese) {
+                if (doSound && ratType.eatSound != null) {
+                    audioSource.clip = ratType.eatSound;
+                    audioSource.Play();
+                }
                 secsSinceLastBite += Time.deltaTime;
                 if (secsSinceLastBite > 1 / ratType.bitesPerSecond) {
                     secsSinceLastBite = 0f;
@@ -87,6 +109,10 @@ namespace Rat
                 }
             } else {
                 UpdatePosition();
+                if (doSound && ratType.walkSound != null) {
+                    audioSource.clip = ratType.walkSound;
+                    audioSource.Play();
+                }
             }
         }
 
@@ -190,6 +216,9 @@ namespace Rat
 
         private void Mutate()
         {
+            audioSource.clip = mutateSound;
+            audioSource.Play();
+            
             // Reset to beginning of the mutant track
             path = mutantPath;
             timeElapsed = 0f;
@@ -197,6 +226,7 @@ namespace Rat
 
             // Choose a new rat type for the next generation
             ratType = Instantiate(ratType);
+            Debug.Log(standardDamage + " " + bombDamage + " " + magicDamage);
             if (standardDamage > bombDamage && standardDamage > magicDamage) {
                 ratType.standardDefense += 1;
                 ratType.color = new Color(0.8f, 0.5f, 0.1f);
@@ -224,6 +254,7 @@ namespace Rat
             currentSprite = -1;
             UpdateSprite();
             Orient();
+            secsSinceLastSound = 100f;
         }
 
         private void Die()
