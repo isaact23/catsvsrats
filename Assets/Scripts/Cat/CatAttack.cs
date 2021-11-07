@@ -28,7 +28,7 @@ public class CatAttack : MonoBehaviour
     }
     void Start()
     {
-        SpawnProjectile();
+        
     }
 
     // Update is called once per frame
