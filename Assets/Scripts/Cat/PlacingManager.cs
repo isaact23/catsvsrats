@@ -8,21 +8,20 @@ public class PlacingManager : MonoBehaviour
     [SerializeField] private RatManager rManager;
     [SerializeField] public int money = 0;
     [SerializeField] private MouseOnWorld mouseW;
+    [SerializeField] private SpriteRenderer cursorRenderer;
     public GameObject catToPlace;
     private int currentCost = 0;
     private bool sell = false;
+    private Sprite cursorChanged;
+    [SerializeField] Sprite defaultCursor;
+    [SerializeField] Sprite sellCursor;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Deselect();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public bool IsPlacing()
     {
         return (catToPlace != null);
@@ -35,6 +34,7 @@ public class PlacingManager : MonoBehaviour
     {
         Deselect();
         sell = true;
+        SetCursor(sellCursor);
         
     }
     public void PlaceCat()
@@ -43,21 +43,29 @@ public class PlacingManager : MonoBehaviour
         createdCat.GetComponent<CatAttack>().Setup(rManager);
         createdCat.GetComponent<Placeable>().Setup(this);
         money -= currentCost;
-        catToPlace = null;
+        Deselect();
     }
-    public void GiveCat(GameObject givenPrefab, int cost)
+    public void GiveCat(GameObject givenPrefab, int cost, Sprite givenCursor)
     {
         Deselect();
         if (money >= cost)
         {
             currentCost = cost;
             catToPlace = givenPrefab;
+            SetCursor(givenCursor);
         }
     }
     public void Deselect()
     {
         sell = false;
         catToPlace = null;
+        SetCursor(defaultCursor);
+        
+    }
+
+    public void SetCursor(Sprite toSet)
+    {
+        cursorRenderer.sprite = toSet;
     }
 
 

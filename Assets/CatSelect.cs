@@ -6,6 +6,7 @@ public class CatSelect : MonoBehaviour
 {
     [SerializeField] private PlacingManager pManager;
     [SerializeField] private GameObject catPrefab;
+    [SerializeField] private Sprite changedCursor;
     [SerializeField] private int cost;
     // Start is called before the first frame update
     void Awake()
@@ -24,6 +25,6 @@ public class CatSelect : MonoBehaviour
     }
     void OnMouseDown()
     {
-        pManager.GiveCat(catPrefab, cost);    
+        pManager.GiveCat(catPrefab, cost, changedCursor);    
     }
 }
