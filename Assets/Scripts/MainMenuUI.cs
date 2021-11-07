@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
+    public Transition transition;
     public GameObject mainMenu;
     public GameObject credits;
     public GameObject tutorial;
@@ -19,6 +20,7 @@ public class MainMenuUI : MonoBehaviour
     {
         // LOAD OPENING SCENE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!?
         loading = true;
+        transition.loading = true;
     }
 
     public void OnCreditsButtonPress()
