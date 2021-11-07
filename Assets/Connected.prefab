@@ -1139,45 +1139,57 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3327591679209670316}
     - target: {fileID: 6468176065386780423, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
-      propertyPath: cost
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 6468176065386780423, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
       propertyPath: pManager
       value: 
       objectReference: {fileID: 3327591679209670316}
     - target: {fileID: 6468176065386780423, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
+      propertyPath: catPrefab
+      value: 
+      objectReference: {fileID: 7400035747820481997, guid: cbf176f56408aa84fafee35ee093965b, type: 3}
+    - target: {fileID: 6468176065386780423, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
       propertyPath: priceText
       value: 
       objectReference: {fileID: 2015542318254501902}
+    - target: {fileID: 6468176065386780423, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
+      propertyPath: changedCursor
+      value: 
+      objectReference: {fileID: 21300000, guid: f518e2afad0917944b5002ab60c9a827, type: 3}
     - target: {fileID: 6468176065527337165, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
       propertyPath: pManager
       value: 
       objectReference: {fileID: 3327591679209670316}
     - target: {fileID: 6468176065719922375, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
-      propertyPath: cost
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6468176065719922375, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
       propertyPath: pManager
       value: 
       objectReference: {fileID: 3327591679209670316}
+    - target: {fileID: 6468176065719922375, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
+      propertyPath: catPrefab
+      value: 
+      objectReference: {fileID: 7083697199802165783, guid: 1fe03a2f30df60447971a1e8a4702172, type: 3}
     - target: {fileID: 6468176065719922375, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
       propertyPath: priceText
       value: 
       objectReference: {fileID: 5339609513117065295}
-    - target: {fileID: 6468176066048310209, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
-      propertyPath: cost
-      value: 300
-      objectReference: {fileID: 0}
+    - target: {fileID: 6468176065719922375, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
+      propertyPath: changedCursor
+      value: 
+      objectReference: {fileID: 21300000, guid: b8d5711be58354646a11a743973138b5, type: 3}
     - target: {fileID: 6468176066048310209, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
       propertyPath: pManager
       value: 
       objectReference: {fileID: 3327591679209670316}
     - target: {fileID: 6468176066048310209, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
+      propertyPath: catPrefab
+      value: 
+      objectReference: {fileID: 3442762282117355266, guid: 9f46f9b25b1994344b7cebbaf7a8b410, type: 3}
+    - target: {fileID: 6468176066048310209, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
       propertyPath: priceText
       value: 
       objectReference: {fileID: 4566332254775463348}
+    - target: {fileID: 6468176066048310209, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
+      propertyPath: changedCursor
+      value: 
+      objectReference: {fileID: 21300000, guid: 6fb02131d667e4a40b86be0f1973df34, type: 3}
     - target: {fileID: 6468176066105817474, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
       propertyPath: m_Name
       value: selectUI
@@ -1227,17 +1239,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6468176066182034250, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
-      propertyPath: cost
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 6468176066182034250, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
       propertyPath: pManager
       value: 
       objectReference: {fileID: 3327591679209670316}
     - target: {fileID: 6468176066182034250, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
+      propertyPath: catPrefab
+      value: 
+      objectReference: {fileID: 7576340579073806990, guid: b43a4c9d42b42ad4e972bb73571c7964, type: 3}
+    - target: {fileID: 6468176066182034250, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
       propertyPath: priceText
       value: 
       objectReference: {fileID: 3248513810132253946}
+    - target: {fileID: 6468176066182034250, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
+      propertyPath: changedCursor
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f92b62673650024a8983b11f4420810, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aef804f626f5f404d85ea5b1d7b4f120, type: 3}
 --- !u!4 &4465544275885256489 stripped

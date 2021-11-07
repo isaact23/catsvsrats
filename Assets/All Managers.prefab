@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rManager: {fileID: 7509082435388086279}
-  money: 0
+  money: 30
   mouseW: {fileID: 0}
   cursorRenderer: {fileID: 0}
   catToPlace: {fileID: 0}
