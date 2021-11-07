@@ -121,7 +121,7 @@ MonoBehaviour:
   projectileSpawnPlace: {fileID: 7400035747820482006}
   damageType: 2
   shootSound: {fileID: 8300000, guid: a8073bac27179914f90e0b5048344f2d, type: 3}
-  hitSound: {fileID: 8300000, guid: a4691fcb797abe74dbf8376948556368, type: 3}
+  hitSound: {fileID: 8300000, guid: 17d3ef97992faea4194356158e16c1c6, type: 3}
   hasTarget: 0
 --- !u!61 &7400035747820481994
 BoxCollider2D:

@@ -16,18 +16,16 @@ namespace Rat
         public HealthManager healthManager;
         public PlacingManager placingManager;
         public AudioClip mutateSound;
+        public AudioClip deathSound;
 
+        private AudioSource audioSource;
         private int lastCheesePosition = 0;
         
 
         private void Awake()
         {
             allRats = new List<RatObject>();
-        }
-
-        private void Start()
-        {
-            
+            audioSource = GetComponent<AudioSource>();
         }
 
         public void StartRound(int round)
@@ -77,6 +75,8 @@ namespace Rat
         public void RemoveRat(RatObject rat)
         {
             allRats.Remove(rat);
+            audioSource.clip = deathSound;
+            audioSource.Play();
         }
     }
 }

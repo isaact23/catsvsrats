@@ -48,7 +48,7 @@ MonoBehaviour:
   flightSpeed: 6
   attackDamage: 1
   damageType: 2
-  explode: {fileID: 0}
+  explode: {fileID: 6196398197240800177, guid: 45225b8f5fb06e048a5e63bda7fb48d7, type: 3}
   rotatesForward: 0
 --- !u!212 &6539696777280626115
 SpriteRenderer:
