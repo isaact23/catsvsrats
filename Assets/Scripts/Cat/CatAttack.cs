@@ -62,6 +62,7 @@ public class CatAttack : MonoBehaviour
         spawnedProjectile.transform.position = projectileSpawnPlace.position;
         spawnedProjectile.SetDamage(damageType, attackDamage);
         spawnedProjectile.SetTarget(target);
+        spawnedProjectile.SetManager(rManager);
     }
     public void InstantAttack()
     {
