@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float flightSpeed = 1f;
     [SerializeField] private float attackDamage = 1f;
     [SerializeField] private DamageType damageType;
+    [SerializeField] private Explosion explode;
+    private RatManager rManager;
     // Start is called before the first frame update
     void Start()
     { 
@@ -29,7 +31,16 @@ public class Projectile : MonoBehaviour
         if (Vector2.Dot(moveDirection, target.transform.position - transform.position) < 0)
         {
             // Target Reached
-            target.TakeDamage(damageType, attackDamage);
+            if (explode != null)
+            {
+                Explosion created = Instantiate(explode, target.transform.position, Quaternion.identity) as Explosion;
+                created.Explode(attackDamage, damageType, rManager);
+            }
+            else
+            {
+                target.TakeDamage(damageType, attackDamage);
+            }
+            
             Destroy(gameObject);
         }
         
@@ -43,5 +54,9 @@ public class Projectile : MonoBehaviour
     public void SetTarget(RatObject target)
     {
         this.target = target;
+    }
+    public void SetManager(RatManager givenManager)
+    {
+        rManager = givenManager;
     }
 }
