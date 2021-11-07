@@ -58,11 +58,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5331c857956d8d340b5ace748417d3bd, type: 2}
   - {fileID: 11400000, guid: 002036fc92730f54fac423fec1197cf7, type: 2}
   - {fileID: 11400000, guid: 973960f9e9058ca4282ce6cc45959055, type: 2}
+  - {fileID: 11400000, guid: 185fa67ef9685f5458578f6345368186, type: 2}
+  - {fileID: 11400000, guid: 9f7206e4b03dc2948b6bbfc92fadf071, type: 2}
+  - {fileID: 11400000, guid: bf878574501109f47876d15d67d73b70, type: 2}
   pathIndex:
   - {fileID: 11400000, guid: 941720f204d0e704690fbe85c3cbf6a8, type: 2}
   - {fileID: 11400000, guid: 56e5310550de56e4d9ee1b20efc4bc48, type: 2}
   - {fileID: 11400000, guid: bcda9702bc9c2c54aa0cc3a877d0a7cd, type: 2}
   healthManager: {fileID: 7509082435388086298}
+  placingManager: {fileID: 0}
 --- !u!95 &7509082435388086278
 Animator:
   serializedVersion: 3

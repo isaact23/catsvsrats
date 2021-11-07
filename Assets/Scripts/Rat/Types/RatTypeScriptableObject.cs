@@ -24,6 +24,11 @@ namespace Rat
         public int biteDamage = 1;
         public int cheesePosition = -1;
         
+        // Sounds
+        public AudioClip walk;
+        public AudioClip eat;
+        public float soundsPerSec = 0.15f;
+        
         // Cash
         public int cashDrop;
     }
