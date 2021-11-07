@@ -1496,7 +1496,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.21875, y: 0.34375, z: 0.21875, w: 0.1875}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2, y: 1}
     newSize: {x: 1, y: 1}
@@ -1547,7 +1547,7 @@ SpriteRenderer:
   m_SortingLayerID: 889967695
   m_SortingLayer: 2
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 931672aeea235624da8290ff24c3ebc4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c83b788665dece64f97c9a80470ca66a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8962,6 +8962,10 @@ PrefabInstance:
       propertyPath: winMusic
       value: 
       objectReference: {fileID: 8300000, guid: 8558c5826e486bc44a1b9ed6ac7219e4, type: 3}
+    - target: {fileID: 3327591679209670318, guid: 4ac7ccde1731acf459863f708d3b3de4, type: 3}
+      propertyPath: maxRounds
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3327591679209670318, guid: 4ac7ccde1731acf459863f708d3b3de4, type: 3}
       propertyPath: deathSound
       value: 
