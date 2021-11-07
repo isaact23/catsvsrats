@@ -24,9 +24,11 @@ MonoBehaviour:
   - {fileID: 1495781264056498570, guid: ad36317270075a14ba7408090e15dff3, type: 3}
   eatingSprites: []
   color: {r: 1, g: 1, b: 1, a: 1}
+  flip: 0
   startHp: 10
   speed: 0.75
   spritesPerSecond: 5
   standardDefense: 0
   bombDefense: 0
   magicDefense: 0
+  cashDrop: 100

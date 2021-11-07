@@ -31,7 +31,6 @@ public class Explosion : MonoBehaviour
             {
                 rManager.allRats[i].TakeDamage(damageType, damage);
             }
-
         }
     }
 }

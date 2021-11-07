@@ -28,3 +28,4 @@ MonoBehaviour:
   standardDefense: 0
   bombDefense: 0
   magicDefense: 0
+  cashDrop: 25

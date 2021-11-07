@@ -23,5 +23,8 @@ namespace Rat
         public float standardDefense = 0;
         public float bombDefense = 0;
         public float magicDefense = 0;
+        
+        // Cash
+        public int cashDrop;
     }
 }
