@@ -35,8 +35,6 @@ namespace Rat
             RatObject newRat = Instantiate(ratPrefab);
             int path = typePath % 10;
             int ratType = typePath / 10;
-            Debug.Log(path);
-            Debug.Log(ratType);
             if (ratType >= ratTypeIndex.Count) {
                 Debug.LogError("Rat type " + ratType + " out of bounds.");
             } else if (path >= pathIndex.Count) {

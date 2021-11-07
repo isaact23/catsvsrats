@@ -127,7 +127,6 @@ namespace Rat
         private void UpdateHpBar()
         {
             float hpRatio = hp / ratType.startHp;
-            Debug.Log(hpRatio);
             if (hpRatio > 0.99f) {
                 hpRed.SetActive(false);
                 hpGreen.SetActive(false);
