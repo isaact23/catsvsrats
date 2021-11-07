@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8049905939478108103}
   - component: {fileID: 6539696777280626115}
   m_Layer: 0
-  m_Name: Projectile 1
+  m_Name: ArrowProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,8 @@ MonoBehaviour:
   flightSpeed: 6
   attackDamage: 1
   damageType: 0
+  explode: {fileID: 0}
+  rotatesForward: 1
 --- !u!212 &6539696777280626115
 SpriteRenderer:
   m_ObjectHideFlags: 0
