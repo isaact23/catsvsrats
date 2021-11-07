@@ -7,6 +7,7 @@ namespace Rat
 {
     public class RatManager : MonoBehaviour
     {
+        public GameObject beginButton;
         public List<RatObject> allRats;
         public Animator roundAnimator;
         public RatObject ratPrefab;
@@ -15,6 +16,10 @@ namespace Rat
         public List<PathScriptableObject> pathIndex;
         public HealthManager healthManager;
         public PlacingManager placingManager;
+        private int roundIndex;
+        [SerializeField] private int maxRounds = 5;
+        private bool gameOn = true;
+        private float buttonRefresh = 0f;
 
         private int lastCheesePosition = 0;
         
@@ -22,15 +27,50 @@ namespace Rat
         private void Awake()
         {
             allRats = new List<RatObject>();
+            gameOn = true;
+
         }
 
+        private void Update()
+        {
+            buttonRefresh = Mathf.Max(0f, buttonRefresh - Time.deltaTime);
+            if (gameOn)
+            {
+
+                if (roundAnimator.GetCurrentAnimatorStateInfo(0).IsName("RoundIdle") && buttonRefresh == 0f && allRats.Count == 0)
+                {
+                    if (roundIndex == maxRounds)
+                    {
+                        gameOn = false;
+                        beginButton.SetActive(false);
+                    }
+                    else
+                    {
+                        beginButton.SetActive(true);
+                    }
+                }
+                else
+                {
+                    beginButton.SetActive(false);
+                }
+                
+            }
+            else
+            {
+                beginButton.SetActive(false);
+            }
+        }
         private void Start()
         {
-            
+            roundIndex = 0;
         }
 
-        public void StartRound(int round)
+        public void StartRound()
         {
+            buttonRefresh = 5f;
+            roundIndex++;
+            roundAnimator.SetInteger("Round", roundIndex);
+            roundAnimator.SetTrigger("StartRound");
             //roundAnimator.Play();
         }
 
