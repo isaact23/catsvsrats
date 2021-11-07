@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pMaster: {fileID: 0}
-  sellingCost: 0
+  sellingCost: 22
 --- !u!212 &3442762282117355271
 SpriteRenderer:
   m_ObjectHideFlags: 0

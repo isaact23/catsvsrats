@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 6732287491562615215, guid: 9d687418b2cdfa649a36a91d962641d7, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
   flip: 1
-  startHp: 5
+  startHp: 7
   speed: 5
   spritesPerSecond: 3.5
   standardDefense: 0
@@ -31,5 +31,6 @@ MonoBehaviour:
   cheesePosition: -1
   walkSound: {fileID: 0}
   eatSound: {fileID: 8300000, guid: e030f6dbc23ef634c9a56ff5b5ff13fc, type: 3}
+  hitByBombSound: {fileID: 0}
   soundsPerSecond: 0.15
   cashDrop: 8

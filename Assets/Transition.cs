@@ -43,11 +43,15 @@ public class Transition : MonoBehaviour
             {
                 if (loadsAScene && loadTime >= totalLoadTime)
                 {
-                    SceneManager.LoadScene(sceneLoadName);
+                    LoadScene(sceneLoadName);
                     loading = false;
                 }
-                
             }
         }
+    }
+
+    public void LoadScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }
