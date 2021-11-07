@@ -62,10 +62,10 @@ namespace Rat
             
             // Flip
             if (ratType.flip) {
-                transform.localScale = new Vector3(-1, 1, 1);
+                spriteRenderer.flipX = true;
             }
             else {
-                transform.localScale = new Vector3(1, 1, 1);
+                spriteRenderer.flipX = false;
             }
         }
 
@@ -136,11 +136,11 @@ namespace Rat
                 hpGreen.SetActive(true);
 
                 // Update HP bar scaling
-                Vector3 hpPos = hpGreen.transform.position;
+                Vector3 hpPos = Vector3.zero;
                 Vector3 hpScale = hpGreen.transform.localScale;
-                hpPos.x = -hpRatio / 2;
+                hpPos.x = (hpRatio - 1) / 2;
                 hpScale.x = hpRatio;
-                hpGreen.transform.position = hpPos;
+                hpGreen.transform.localPosition = hpPos;
                 hpGreen.transform.localScale = hpScale;
             }
         }
