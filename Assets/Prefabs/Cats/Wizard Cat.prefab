@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pMaster: {fileID: 0}
-  sellingCost: 0
+  sellingCost: 35
 --- !u!212 &7400035747820481992
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   target: {fileID: 0}
   projectileAttack: {fileID: 8049905939478108103, guid: 7736aa9684cb4954bbb78264f701aeca, type: 3}
   attackRange: 4
-  attackDamage: 1
+  attackDamage: 2
   projectileSpawnPlace: {fileID: 7400035747820482006}
   damageType: 2
   shootSound: {fileID: 8300000, guid: a8073bac27179914f90e0b5048344f2d, type: 3}

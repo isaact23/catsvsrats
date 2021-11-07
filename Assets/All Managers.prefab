@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pManager: {fileID: 7509082435388086277}
+  loseScreen: {fileID: 0}
   cheeseSprites:
   - {fileID: 8529724003744857774, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}
   - {fileID: -2038510911566224960, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}
@@ -114,6 +115,7 @@ MonoBehaviour:
   - {fileID: 3455655018791357250, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}
   cheese: {fileID: 0}
   text: {fileID: 0}
+  loseMusic: {fileID: 8300000, guid: 213c1da39f53cb44188f77eba1bc5294, type: 3}
   startHealth: 100
 --- !u!114 &7509082435388086277
 MonoBehaviour:

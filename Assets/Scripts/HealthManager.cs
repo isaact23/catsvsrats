@@ -8,11 +8,14 @@ using UnityEngine.PlayerLoop;
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] private PlacingManager pManager;
+    public GameObject loseScreen;
     public Sprite[] cheeseSprites;
     public GameObject cheese;
     public TextMeshPro text;
+    public AudioClip loseMusic;
     public int startHealth = 100;
 
+    private AudioSource audioSource;
     private SpriteRenderer cheeseSpriteRenderer;
     private int health;
     
@@ -20,6 +23,7 @@ public class HealthManager : MonoBehaviour
     {
         health = startHealth;
         cheeseSpriteRenderer = cheese.GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         UpdateCheeseSprite();
         UpdateHealthText();
     }
@@ -51,10 +55,14 @@ public class HealthManager : MonoBehaviour
         }
         UpdateCheeseSprite();
         UpdateHealthText();
+        
         if (health == 0)
         {
             pManager.PauseGame(true);
-            
+            loseScreen.SetActive(true);
+            audioSource.clip = loseMusic;
+            audioSource.Play();
+            Debug.Log("Subtracting health!");
         }
     }
 }

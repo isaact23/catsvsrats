@@ -16,15 +16,21 @@ namespace Rat
         public List<PathScriptableObject> pathIndex;
         public HealthManager healthManager;
         public PlacingManager placingManager;
+        public GameObject winMenu;
+        public AudioClip winMusic;
+        public AudioClip peacefulMusic;
+        public AudioClip fightMusic;
+        public AudioSource musicSource;
 
         private int roundIndex;
         [SerializeField] private int maxRounds = 5;
         private bool gameOn = true;
         private float buttonRefresh = 0f;
+        private bool musicFlop = true;
+            
 
         public AudioClip mutateSound;
         public AudioClip deathSound;
-
 
         private AudioSource audioSource;
         private int lastCheesePosition = 0;
@@ -50,9 +56,18 @@ namespace Rat
                     {
                         gameOn = false;
                         beginButton.SetActive(false);
+                        winMenu.SetActive(true);
+                        musicSource.clip = winMusic;
+                        musicSource.loop = false;
+                        musicSource.Play();
                     }
-                    else
-                    {
+                    else {
+                        if (musicFlop) {
+                            musicFlop = false;
+                            musicSource.clip = peacefulMusic;
+                            musicSource.loop = true;
+                            musicSource.Play();
+                        }
                         beginButton.SetActive(true);
                     }
                 }
@@ -81,7 +96,10 @@ namespace Rat
             roundIndex++;
             roundAnimator.SetInteger("Round", roundIndex);
             roundAnimator.SetTrigger("StartRound");
-            //roundAnimator.Play();
+            musicSource.clip = fightMusic;
+            musicSource.loop = true;
+            musicSource.Play();
+            musicFlop = true;
         }
 
         // Digit 1 (LSD) - path ID
