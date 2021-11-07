@@ -47,11 +47,7 @@ public class CatAttack : MonoBehaviour
             if (locatedTarget != null)
             {
                 target = locatedTarget;
-
             }
-            
-
-            
         }
         anim.SetBool("IsAttacking", (target != null));
     }
