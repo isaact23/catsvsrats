@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   projectileAttack: {fileID: 8049905939478108103, guid: 7736aa9684cb4954bbb78264f701aeca, type: 3}
-  attackRange: 20
+  attackRange: 4
   attackDamage: 1
   projectileSpawnPlace: {fileID: 1285907273423639271}
   damageType: 0
