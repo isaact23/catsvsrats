@@ -196,18 +196,25 @@ namespace Rat
             pathProgress = 0f;
 
             // Choose a new rat type for the next generation
+            ratType = Instantiate(ratType);
             if (standardDamage > bombDamage && standardDamage > magicDamage) {
-                ratType = ratType.standardDefenseGeneration;
+                ratType.standardDefense += 1;
+                ratType.color = new Color(0.8f, 0.5f, 0.1f);
             } else if (bombDamage > standardDamage && bombDamage > magicDamage) {
-                ratType = ratType.bombDefenseGeneration;
+                ratType.bombDefense += 1;
+                ratType.color = Color.gray;
             } else if (magicDamage > standardDamage && magicDamage > bombDamage) {
-                ratType = ratType.magicDefenseGeneration;
-            }
-            else {
-                int ratTypeCount = ratType.nextGeneration.Length;
-                if (ratTypeCount > 0) {
-                    ratType = ratType.nextGeneration[Random.Range(0, ratTypeCount)];
-                }
+                ratType.magicDefense += 1;
+                ratType.color = Color.magenta;
+            } else if (hp <= 1f) {
+                ratType.startHp *= 2;
+                ratType.color = Color.red;
+            } else if (standardDamage >= 1f && bombDamage >= 1f && magicDamage >= 1f) {
+                ratType.bitesPerSecond *= 3;
+                ratType.color = Color.yellow;
+            } else {
+                ratType.speed *= 2;
+                ratType.color = Color.green;
             }
             
             hp = ratType.startHp;

@@ -7,12 +7,6 @@ namespace Rat
     [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/RatTypeScriptableObject", order = 2)]
     public class RatTypeScriptableObject : ScriptableObject
     {
-        // Evolution
-        public RatTypeScriptableObject[] nextGeneration;
-        public RatTypeScriptableObject standardDefenseGeneration;
-        public RatTypeScriptableObject bombDefenseGeneration;
-        public RatTypeScriptableObject magicDefenseGeneration;
-        
         // Appearance
         public Sprite[] sprites;
         public Sprite[] eatingSprites;
