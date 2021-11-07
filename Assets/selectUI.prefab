@@ -248,7 +248,7 @@ MonoBehaviour:
   pManager: {fileID: 0}
   catPrefab: {fileID: 1285907273423639269, guid: ae6d3f33a5e379541944c73cda42c298, type: 3}
   changedCursor: {fileID: 21300000, guid: 624f7756b43279044b53eab011318f71, type: 3}
-  cost: 50
+  cost: 75
   priceText: {fileID: 0}
 --- !u!1 &6468176065527337155
 GameObject:
@@ -498,7 +498,7 @@ MonoBehaviour:
   pManager: {fileID: 0}
   catPrefab: {fileID: 1285907273423639269, guid: ae6d3f33a5e379541944c73cda42c298, type: 3}
   changedCursor: {fileID: 21300000, guid: 624f7756b43279044b53eab011318f71, type: 3}
-  cost: 10
+  cost: 20
   priceText: {fileID: 0}
 --- !u!1 &6468176066048310215
 GameObject:
@@ -625,7 +625,7 @@ MonoBehaviour:
   pManager: {fileID: 0}
   catPrefab: {fileID: 1285907273423639269, guid: ae6d3f33a5e379541944c73cda42c298, type: 3}
   changedCursor: {fileID: 21300000, guid: 624f7756b43279044b53eab011318f71, type: 3}
-  cost: 30
+  cost: 45
   priceText: {fileID: 0}
 --- !u!1 &6468176066105817474
 GameObject:
@@ -788,5 +788,5 @@ MonoBehaviour:
   pManager: {fileID: 0}
   catPrefab: {fileID: 1285907273423639269, guid: ae6d3f33a5e379541944c73cda42c298, type: 3}
   changedCursor: {fileID: 21300000, guid: 624f7756b43279044b53eab011318f71, type: 3}
-  cost: 20
+  cost: 50
   priceText: {fileID: 0}
