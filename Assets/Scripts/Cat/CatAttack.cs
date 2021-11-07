@@ -28,7 +28,7 @@ public class CatAttack : MonoBehaviour
     }
     void Start()
     {
-        SpawnProjectile();
+        
     }
 
     // Update is called once per frame
@@ -74,10 +74,14 @@ public class CatAttack : MonoBehaviour
     {
         RatObject closest = null;
         for (int i = 0; i < rManager.allRats.Count; i++) {
-            if( closest == null || closest.DistFromExit() < rManager.allRats[i].DistFromExit())
+            if (Vector2.Distance(rManager.allRats[i].transform.position, transform.position) < attackRange)
             {
-                closest = rManager.allRats[i];
+                if (closest == null || closest.DistFromExit() < rManager.allRats[i].DistFromExit())
+                {
+                    closest = rManager.allRats[i];
+                }
             }
+   
         }
         return closest;
     }

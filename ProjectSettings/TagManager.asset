@@ -40,9 +40,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2277228037
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Projectiles
     uniqueID: 1323689019
+    locked: 0
+  - name: UI
+    uniqueID: 889967695
+    locked: 0
+  - name: Mouse
+    uniqueID: 3249404391
     locked: 0

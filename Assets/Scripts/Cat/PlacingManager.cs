@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Rat;
+using TMPro;
+
 
 public class PlacingManager : MonoBehaviour
 {
@@ -15,11 +17,16 @@ public class PlacingManager : MonoBehaviour
     private Sprite cursorChanged;
     [SerializeField] Sprite defaultCursor;
     [SerializeField] Sprite sellCursor;
+    [SerializeField] TextMeshPro moneyText;
 
     // Start is called before the first frame update
     void Start()
     {
         Deselect();
+    }
+    void Update()
+    {
+        moneyText.text = money.ToString();
     }
 
     public bool IsPlacing()
