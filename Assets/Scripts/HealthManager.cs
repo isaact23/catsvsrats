@@ -27,7 +27,9 @@ public class HealthManager : MonoBehaviour
     {
         int cheeseSprite = (int) Mathf.Floor(
             (cheeseSprites.Length - 1) - ((health * (cheeseSprites.Length - 1)) / startHealth));
-        cheeseSpriteRenderer.sprite = cheeseSprites[cheeseSprite];
+        if (cheeseSprite < cheeseSprites.Length) {
+            cheeseSpriteRenderer.sprite = cheeseSprites[cheeseSprite];
+        }
     }
 
     private void UpdateHealthText()

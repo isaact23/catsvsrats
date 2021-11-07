@@ -62,6 +62,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 941720f204d0e704690fbe85c3cbf6a8, type: 2}
   - {fileID: 11400000, guid: 56e5310550de56e4d9ee1b20efc4bc48, type: 2}
   - {fileID: 11400000, guid: bcda9702bc9c2c54aa0cc3a877d0a7cd, type: 2}
+  healthManager: {fileID: 7509082435388086298}
 --- !u!95 &7509082435388086278
 Animator:
   serializedVersion: 3
@@ -93,8 +94,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da36b92cef7ac34cad9a2ee55393d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratManager: {fileID: 7509082435388086279}
-  health: 10
+  cheeseSprites:
+  - {fileID: 8529724003744857774, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}
+  - {fileID: -2038510911566224960, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}
+  - {fileID: -5237998335323363900, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}
+  - {fileID: 2951079161656655409, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}
+  - {fileID: 5139888846632012959, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}
+  - {fileID: 7252785713260482385, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}
+  - {fileID: 3455655018791357250, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}
+  cheese: {fileID: 0}
+  text: {fileID: 0}
+  startHealth: 100
 --- !u!114 &7509082435388086277
 MonoBehaviour:
   m_ObjectHideFlags: 0
