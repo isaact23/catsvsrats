@@ -15,6 +15,7 @@ namespace Rat
         public List<PathScriptableObject> pathIndex;
         public HealthManager healthManager;
         public PlacingManager placingManager;
+        public AudioClip mutateSound;
 
         private int lastCheesePosition = 0;
         
@@ -54,6 +55,7 @@ namespace Rat
             newRat.ratManager = this;
             newRat.healthManager = healthManager;
             newRat.placingManager = placingManager;
+            newRat.mutateSound = mutateSound;
             allRats.Add(newRat);
         }
 

@@ -12,6 +12,7 @@ namespace Rat
         public RatTypeScriptableObject ratType;
         public PathScriptableObject path;
         public PathScriptableObject mutantPath;
+        public AudioClip mutateSound;
 
         // HP bar
         public GameObject hpRed;
@@ -25,7 +26,7 @@ namespace Rat
         private float pathProgress;
         private int currentSprite;
         private bool eatingCheese = false;
-        private float secsSinceLastBite = 100f;
+        private float secsSinceLastBite = 0f;
         private float secsSinceLastSound = 0f;
         private float standardDamage = 0f;
         private float bombDamage = 0f;
@@ -213,6 +214,9 @@ namespace Rat
 
         private void Mutate()
         {
+            audioSource.clip = mutateSound;
+            audioSource.Play();
+            
             // Reset to beginning of the mutant track
             path = mutantPath;
             timeElapsed = 0f;
@@ -247,6 +251,7 @@ namespace Rat
             currentSprite = -1;
             UpdateSprite();
             Orient();
+            secsSinceLastSound = 100f;
         }
 
         private void Die()

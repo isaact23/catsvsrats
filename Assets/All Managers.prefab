@@ -67,6 +67,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bcda9702bc9c2c54aa0cc3a877d0a7cd, type: 2}
   healthManager: {fileID: 7509082435388086298}
   placingManager: {fileID: 0}
+  mutateSound: {fileID: 8300000, guid: d7b997a60ee53654199ef7b2e6b15430, type: 3}
 --- !u!95 &7509082435388086278
 Animator:
   serializedVersion: 3
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1fb3a117df0244ab74a4f2c2e37406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseUI: {fileID: 0}
   rManager: {fileID: 7509082435388086279}
   money: 30
   mouseW: {fileID: 0}

@@ -103,6 +103,7 @@ MonoBehaviour:
   ratType: {fileID: 11400000, guid: 5331c857956d8d340b5ace748417d3bd, type: 2}
   path: {fileID: 11400000, guid: 941720f204d0e704690fbe85c3cbf6a8, type: 2}
   mutantPath: {fileID: 11400000, guid: bcda9702bc9c2c54aa0cc3a877d0a7cd, type: 2}
+  mutateSound: {fileID: 0}
   hpRed: {fileID: 7606132476435764245}
   hpGreen: {fileID: 7606132477513200738}
 --- !u!82 &2788415202872026470
@@ -116,7 +117,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

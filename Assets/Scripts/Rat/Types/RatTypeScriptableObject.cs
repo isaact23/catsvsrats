@@ -12,7 +12,7 @@ namespace Rat
         public Sprite[] eatingSprites;
         public Color color = Color.white;
         public bool flip;
-        
+
         // Attributes
         public float startHp = 5;
         public float speed = 1;

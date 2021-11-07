@@ -30,4 +30,7 @@ MonoBehaviour:
   bitesPerSecond: 3
   biteDamage: 1
   cheesePosition: 0
+  walkSound: {fileID: 0}
+  eatSound: {fileID: 0}
+  soundsPerSecond: 0.15
   cashDrop: 15

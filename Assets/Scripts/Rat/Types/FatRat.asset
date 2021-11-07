@@ -35,4 +35,8 @@ MonoBehaviour:
   magicDefense: 0
   bitesPerSecond: 5
   biteDamage: 1
+  cheesePosition: -1
+  walkSound: {fileID: 0}
+  eatSound: {fileID: 8300000, guid: cf9d87129d6ecce42b6badd3dbed3518, type: 3}
+  soundsPerSecond: 0.15
   cashDrop: 15

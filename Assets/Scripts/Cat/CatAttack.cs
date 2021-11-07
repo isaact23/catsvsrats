@@ -11,6 +11,9 @@ public class CatAttack : MonoBehaviour
     [SerializeField] private float attackDamage = 1f;
     [SerializeField] private Transform projectileSpawnPlace;
     [SerializeField] private DamageType damageType;
+    [SerializeField] private AudioClip shootSound;
+    [SerializeField] private AudioClip hitSound;
+    private AudioSource audioSource;
     private Animator anim;
     private RatManager rManager;
     public bool hasTarget;
@@ -19,16 +22,14 @@ public class CatAttack : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         rManager = FindObjectOfType<RatManager>();
         anim = GetComponent<Animator>();
     }
+
     public void Setup(RatManager givenManager)
     {
         rManager = givenManager;
-    }
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -54,17 +55,26 @@ public class CatAttack : MonoBehaviour
 
     public void SpawnProjectile()
     {
+        if (shootSound != null) {
+            audioSource.clip = shootSound;
+            audioSource.Play();
+        }
         Projectile spawnedProjectile = Instantiate(projectileAttack) as Projectile;
         spawnedProjectile.transform.position = projectileSpawnPlace.position;
         spawnedProjectile.SetDamage(damageType, attackDamage);
         spawnedProjectile.SetTarget(target);
         spawnedProjectile.SetManager(rManager);
+        spawnedProjectile.SetHitSound(hitSound);
     }
     public void InstantAttack()
     {
         if (target != null)
         {
             target.TakeDamage(damageType, attackDamage);
+            if (hitSound != null) {
+                audioSource.clip = hitSound;
+                audioSource.Play();
+            }
         }
     }
     private RatObject LocateRat()
