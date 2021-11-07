@@ -5407,22 +5407,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3327591679209670318, guid: 4ac7ccde1731acf459863f708d3b3de4, type: 3}
-      propertyPath: ratTypeIndex.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3327591679209670318, guid: 4ac7ccde1731acf459863f708d3b3de4, type: 3}
-      propertyPath: ratTypeIndex.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 185fa67ef9685f5458578f6345368186, type: 2}
-    - target: {fileID: 3327591679209670318, guid: 4ac7ccde1731acf459863f708d3b3de4, type: 3}
-      propertyPath: ratTypeIndex.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 9f7206e4b03dc2948b6bbfc92fadf071, type: 2}
-    - target: {fileID: 3327591679209670318, guid: 4ac7ccde1731acf459863f708d3b3de4, type: 3}
-      propertyPath: ratTypeIndex.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: bf878574501109f47876d15d67d73b70, type: 2}
     - target: {fileID: 4465544277421109926, guid: 4ac7ccde1731acf459863f708d3b3de4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7

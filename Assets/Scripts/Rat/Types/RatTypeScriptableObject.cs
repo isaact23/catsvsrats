@@ -25,9 +25,9 @@ namespace Rat
         public int cheesePosition = -1;
         
         // Sounds
-        public AudioClip walk;
-        public AudioClip eat;
-        public float soundsPerSec = 0.15f;
+        public AudioClip walkSound;
+        public AudioClip eatSound;
+        public float soundsPerSecond = 0.15f;
         
         // Cash
         public int cashDrop;

@@ -17,6 +17,7 @@ namespace Rat
         public GameObject hpRed;
         public GameObject hpGreen;
 
+        private AudioSource audioSource;
         private SpriteRenderer spriteRenderer;
         private Vector3 cheesePosition;
         private float hp;
@@ -24,7 +25,8 @@ namespace Rat
         private float pathProgress;
         private int currentSprite;
         private bool eatingCheese = false;
-        private float secsSinceLastBite = 0f;
+        private float secsSinceLastBite = 100f;
+        private float secsSinceLastSound = 0f;
         private float standardDamage = 0f;
         private float bombDamage = 0f;
         private float magicDamage = 0f;
@@ -58,10 +60,15 @@ namespace Rat
             return pathProgress - path.coordinates.Length;
         }
 
+        private void Awake()
+        {
+            audioSource = GetComponent<AudioSource>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
         // Start is called before the first frame update
         private void Start()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
             spriteRenderer.color = ratType.color;
             hp = ratType.startHp;
             timeElapsed = 0f;
@@ -79,7 +86,19 @@ namespace Rat
 
             UpdateSprite();
 
+            // Determine if it's time to make sound
+            secsSinceLastSound += Time.deltaTime;
+            bool doSound = false;
+            if (secsSinceLastSound > 1 / ratType.soundsPerSecond) {
+                secsSinceLastSound = 0f;
+                doSound = true;
+            }
+            
             if (eatingCheese) {
+                if (doSound && ratType.eatSound != null) {
+                    audioSource.clip = ratType.eatSound;
+                    audioSource.Play();
+                }
                 secsSinceLastBite += Time.deltaTime;
                 if (secsSinceLastBite > 1 / ratType.bitesPerSecond) {
                     secsSinceLastBite = 0f;
@@ -87,6 +106,10 @@ namespace Rat
                 }
             } else {
                 UpdatePosition();
+                if (doSound && ratType.walkSound != null) {
+                    audioSource.clip = ratType.walkSound;
+                    audioSource.Play();
+                }
             }
         }
 
