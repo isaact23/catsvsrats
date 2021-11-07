@@ -55,7 +55,7 @@ public class CatAttack : MonoBehaviour
 
     public void SpawnProjectile()
     {
-        if (shootSound != null) {
+        if (shootSound != null && !audioSource.isPlaying) {
             audioSource.clip = shootSound;
             audioSource.Play();
         }
@@ -71,7 +71,7 @@ public class CatAttack : MonoBehaviour
         if (target != null)
         {
             target.TakeDamage(damageType, attackDamage);
-            if (hitSound != null) {
+            if (hitSound != null && !audioSource.isPlaying) {
                 audioSource.clip = hitSound;
                 audioSource.Play();
             }

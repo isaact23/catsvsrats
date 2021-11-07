@@ -31,6 +31,7 @@ MonoBehaviour:
   biteDamage: 1
   cheesePosition: 0
   walkSound: {fileID: 0}
-  eatSound: {fileID: 0}
-  soundsPerSecond: 0.15
+  eatSound: {fileID: 8300000, guid: 0930dc4cb77322c41829bc32caa201f6, type: 3}
+  hitByBombSound: {fileID: 8300000, guid: c60357f25f6e80d4da902280c3c2f8c9, type: 3}
+  soundsPerSecond: 0.5
   cashDrop: 15

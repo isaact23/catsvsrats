@@ -27,6 +27,7 @@ namespace Rat
         // Sounds
         public AudioClip walkSound;
         public AudioClip eatSound;
+        public AudioClip hitByBombSound;
         public float soundsPerSecond = 0.15f;
         
         // Cash

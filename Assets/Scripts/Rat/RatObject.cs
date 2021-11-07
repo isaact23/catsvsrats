@@ -39,6 +39,8 @@ namespace Rat
                 netDamage -= ratType.standardDefense;
                 standardDamage += netDamage;
             } else if (damageType == DamageType.Bomb) {
+                audioSource.clip = ratType.hitByBombSound;
+                audioSource.Play();
                 netDamage -= ratType.bombDefense;
                 bombDamage += netDamage;
             } else if (damageType == DamageType.Magic) {
@@ -224,6 +226,7 @@ namespace Rat
 
             // Choose a new rat type for the next generation
             ratType = Instantiate(ratType);
+            Debug.Log(standardDamage + " " + bombDamage + " " + magicDamage);
             if (standardDamage > bombDamage && standardDamage > magicDamage) {
                 ratType.standardDefense += 1;
                 ratType.color = new Color(0.8f, 0.5f, 0.1f);

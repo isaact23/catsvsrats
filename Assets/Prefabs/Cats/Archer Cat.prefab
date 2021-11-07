@@ -120,6 +120,8 @@ MonoBehaviour:
   attackDamage: 1
   projectileSpawnPlace: {fileID: 7576340579073806981}
   damageType: 0
+  shootSound: {fileID: 8300000, guid: a8cac26bd51844e49b0e953bc6562fb0, type: 3}
+  hitSound: {fileID: 8300000, guid: 3fefad72f211538409ac55f716501aa8, type: 3}
   hasTarget: 0
 --- !u!61 &7576340579073806985
 BoxCollider2D:

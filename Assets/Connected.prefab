@@ -1185,18 +1185,6 @@ PrefabInstance:
       propertyPath: placingManager
       value: 
       objectReference: {fileID: 3327591679209670316}
-    - target: {fileID: 7509082435388086279, guid: 8d9b02e0334c4c54ba0bcfd9b2778c3d, type: 3}
-      propertyPath: ratTypeIndex.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 973960f9e9058ca4282ce6cc45959055, type: 2}
-    - target: {fileID: 7509082435388086279, guid: 8d9b02e0334c4c54ba0bcfd9b2778c3d, type: 3}
-      propertyPath: ratTypeIndex.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 973960f9e9058ca4282ce6cc45959055, type: 2}
-    - target: {fileID: 7509082435388086279, guid: 8d9b02e0334c4c54ba0bcfd9b2778c3d, type: 3}
-      propertyPath: ratTypeIndex.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 973960f9e9058ca4282ce6cc45959055, type: 2}
     - target: {fileID: 7509082435388086298, guid: 8d9b02e0334c4c54ba0bcfd9b2778c3d, type: 3}
       propertyPath: text
       value: 
