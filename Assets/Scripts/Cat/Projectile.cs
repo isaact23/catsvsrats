@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private DamageType damageType;
     [SerializeField] private Explosion explode;
     private RatManager rManager;
+    [SerializeField] private bool rotatesForward = false;
     // Start is called before the first frame update
     void Start()
     { 
@@ -27,7 +28,14 @@ public class Projectile : MonoBehaviour
         }
         float moveDistance = flightSpeed * Time.deltaTime;
         Vector3 moveDirection = target.transform.position - transform.position;
-        transform.Translate(moveDirection.normalized * moveDistance);
+        transform.position = transform.position + moveDirection.normalized * moveDistance;
+        if (rotatesForward)
+        {
+            var newSet = new Quaternion();
+            newSet.eulerAngles = new Vector3(0f, 0f, Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg);
+            transform.rotation = newSet;
+        }
+
         if (Vector2.Dot(moveDirection, target.transform.position - transform.position) < 0)
         {
             // Target Reached
