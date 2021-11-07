@@ -7,6 +7,7 @@ using TMPro;
 
 public class PlacingManager : MonoBehaviour
 {
+    [SerializeField] private GameObject pauseUI;
     [SerializeField] private RatManager rManager;
     [SerializeField] public int money = 0;
     [SerializeField] private MouseOnWorld mouseW;
@@ -43,6 +44,10 @@ public class PlacingManager : MonoBehaviour
     void Update()
     {
         moneyText.text = money.ToString();
+        if (Input.GetKeyDown("escape"))
+        {
+            PauseScreen(!paused);
+        }
     }
 
     public bool IsPlacing()
@@ -109,6 +114,11 @@ public class PlacingManager : MonoBehaviour
     public void SetCursor(Sprite toSet)
     {
         cursorRenderer.sprite = toSet;
+    }
+    public void PauseScreen(bool toSet)
+    {
+        PauseGame(toSet);
+        pauseUI.SetActive(toSet);
     }
 
 
