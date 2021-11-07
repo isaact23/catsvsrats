@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da36b92cef7ac34cad9a2ee55393d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pManager: {fileID: 7509082435388086277}
   cheeseSprites:
   - {fileID: 8529724003744857774, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}
   - {fileID: -2038510911566224960, guid: d32cec8715f680d4481dd55f5fd14079, type: 3}

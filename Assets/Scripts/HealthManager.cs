@@ -7,6 +7,7 @@ using UnityEngine.PlayerLoop;
 
 public class HealthManager : MonoBehaviour
 {
+    [SerializeField] private PlacingManager pManager;
     public Sprite[] cheeseSprites;
     public GameObject cheese;
     public TextMeshPro text;
@@ -50,5 +51,10 @@ public class HealthManager : MonoBehaviour
         }
         UpdateCheeseSprite();
         UpdateHealthText();
+        if (health == 0)
+        {
+            pManager.PauseGame(true);
+            
+        }
     }
 }

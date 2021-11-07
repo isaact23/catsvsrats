@@ -18,11 +18,27 @@ public class PlacingManager : MonoBehaviour
     [SerializeField] Sprite defaultCursor;
     [SerializeField] Sprite sellCursor;
     [SerializeField] TextMeshPro moneyText;
+    private bool paused = false;
+    private float defaultTimeScale = 1f;
 
     // Start is called before the first frame update
+    public void PauseGame(bool setToPause)
+    {
+        paused = setToPause;
+        if (setToPause)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = defaultTimeScale;
+        }
+        Deselect();
+    }
     void Start()
     {
         Deselect();
+        defaultTimeScale = Time.timeScale;
     }
     void Update()
     {
@@ -31,14 +47,26 @@ public class PlacingManager : MonoBehaviour
 
     public bool IsPlacing()
     {
+        if (paused)
+        {
+            return false;
+        }
         return (catToPlace != null);
     }
     public bool IsSelling()
     {
+        if (paused)
+        {
+            return false;
+        }
         return sell;
     }
     public void SelectSell()
     {
+        if (paused)
+        {
+            return;
+        }
         Deselect();
         sell = true;
         SetCursor(sellCursor);
@@ -46,6 +74,10 @@ public class PlacingManager : MonoBehaviour
     }
     public void PlaceCat()
     {
+        if (paused)
+        {
+            return;
+        }
         GameObject createdCat = Instantiate(catToPlace, mouseW.GetPlacerPosition(), Quaternion.identity);
         createdCat.GetComponent<CatAttack>().Setup(rManager);
         createdCat.GetComponent<Placeable>().Setup(this);
@@ -54,6 +86,10 @@ public class PlacingManager : MonoBehaviour
     }
     public void GiveCat(GameObject givenPrefab, int cost, Sprite givenCursor)
     {
+        if (paused)
+        {
+            return;
+        }
         Deselect();
         if (money >= cost)
         {
