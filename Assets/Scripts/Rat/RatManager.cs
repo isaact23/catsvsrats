@@ -39,9 +39,8 @@ namespace Rat
         private void Awake()
         {
             allRats = new List<RatObject>();
-
             gameOn = true;
-
+            Time.timeScale = 1f;
         }
 
         private void Update()

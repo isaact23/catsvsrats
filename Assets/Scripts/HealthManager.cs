@@ -62,7 +62,6 @@ public class HealthManager : MonoBehaviour
             loseScreen.SetActive(true);
             audioSource.clip = loseMusic;
             audioSource.Play();
-            Debug.Log("Subtracting health!");
         }
     }
 }

@@ -21,7 +21,7 @@ public class SpriteAnimation : MonoBehaviour
     void Update()
     {
         if (sprites.Length > 0) {
-            timeElapsed += Time.deltaTime;
+            timeElapsed += Time.unscaledDeltaTime;
             if (timeElapsed > 1 / spritesPerSec) {
                 timeElapsed = 0f;
                 currentSprite++;

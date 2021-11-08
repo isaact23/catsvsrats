@@ -11,6 +11,7 @@ public class MainMenuUI : MonoBehaviour
     public GameObject credits;
     public GameObject tutorial;
     private bool loading;
+    
     void Start()
     {
         loading = false;
@@ -18,7 +19,6 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnStartButtonPress()
     {
-        // LOAD OPENING SCENE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!?
         loading = true;
         transition.loading = true;
     }
