@@ -12,9 +12,10 @@ public class MainMenuUI : MonoBehaviour
     public GameObject tutorial;
     private bool loading;
     
-    void Start()
+    private void Start()
     {
         loading = false;
+        Time.timeScale = 1f;
     }
 
     public void OnStartButtonPress()

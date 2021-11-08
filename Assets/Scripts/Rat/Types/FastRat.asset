@@ -33,4 +33,4 @@ MonoBehaviour:
   eatSound: {fileID: 8300000, guid: e030f6dbc23ef634c9a56ff5b5ff13fc, type: 3}
   hitByBombSound: {fileID: 0}
   soundsPerSecond: 0.15
-  cashDrop: 8
+  cashDrop: 10

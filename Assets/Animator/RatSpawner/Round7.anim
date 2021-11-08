@@ -31,7 +31,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 3.0166667
+    m_StopTime: 8
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -70,68 +70,61 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 40
+    intParameter: 0
     messageOptions: 0
   - time: 1
     functionName: SpawnRat
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 41
+    intParameter: 1
     messageOptions: 0
   - time: 1.3333334
     functionName: SpawnRat
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 40
-    messageOptions: 0
-  - time: 1.5
-    functionName: SpawnRat
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 30
+    intParameter: 0
     messageOptions: 0
   - time: 1.6666667
     functionName: SpawnRat
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 41
+    intParameter: 1
     messageOptions: 0
   - time: 2
     functionName: SpawnRat
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 40
+    intParameter: 10
     messageOptions: 0
   - time: 2.3333333
     functionName: SpawnRat
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 41
-    messageOptions: 0
-  - time: 2.5
-    functionName: SpawnRat
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 31
+    intParameter: 11
     messageOptions: 0
   - time: 2.6833334
     functionName: SpawnRat
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 40
+    intParameter: 0
     messageOptions: 0
   - time: 3.0166667
     functionName: SpawnRat
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 41
+    intParameter: 1
+    messageOptions: 0
+  - time: 8
+    functionName: SpawnRat
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 21
     messageOptions: 0
