@@ -68,13 +68,17 @@ public class CatAttack : MonoBehaviour
     }
     public void InstantAttack()
     {
-        if (target != null)
+        for (int i = 0; i < rManager.allRats.Count; i++)
         {
-            target.TakeDamage(damageType, attackDamage);
-            if (hitSound != null && !audioSource.isPlaying) {
-                audioSource.clip = hitSound;
-                audioSource.Play();
+            if (Vector2.Distance(rManager.allRats[i].transform.position, transform.position) < attackRange)
+            {
+                rManager.allRats[i].TakeDamage(damageType, attackDamage);
             }
+        }
+        if (hitSound != null && !audioSource.isPlaying)
+        {
+            audioSource.clip = hitSound;
+            audioSource.Play();
         }
     }
     private RatObject LocateRat()
