@@ -79,6 +79,7 @@ namespace Rat
             currentSprite = -1;
             UpdateHpBar();
             Orient();
+            UpdatePosition();
         }
 
         // Update is called once per frame
