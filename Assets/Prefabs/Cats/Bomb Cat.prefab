@@ -117,7 +117,7 @@ MonoBehaviour:
   target: {fileID: 0}
   projectileAttack: {fileID: 0}
   attackRange: 3
-  attackDamage: 2
+  attackDamage: 2.5
   projectileSpawnPlace: {fileID: 3442762282117355269}
   damageType: 1
   shootSound: {fileID: 0}
