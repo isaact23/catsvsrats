@@ -14,19 +14,11 @@ public class PlacedownSpace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            if (pMaster.IsPlacing())
-            {
-                pMaster.PlaceCat();
-            }
-        }
+        
     }
     
     void OnMouseDown()
     {
-        if (pMaster.IsPlacing())
-        {
-            pMaster.PlaceCat();
-        }
+        pMaster.PlaceCat();
     }
 }

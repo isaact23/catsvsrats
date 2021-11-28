@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3038301369675485054}
   - component: {fileID: 3038301369675485053}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: MouseCursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

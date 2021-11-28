@@ -55,3 +55,6 @@ TagManager:
   - name: Mouse
     uniqueID: 3249404391
     locked: 0
+  - name: BoundaryBox
+    uniqueID: 1169047499
+    locked: 0

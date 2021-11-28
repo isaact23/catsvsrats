@@ -12,7 +12,7 @@ public class PlacingManager : MonoBehaviour
     [SerializeField] public int money = 0;
     [SerializeField] private MouseOnWorld mouseW;
     [SerializeField] private SpriteRenderer cursorRenderer;
-    public GameObject catToPlace;
+    public GameObject catToPlace = null;
     private int currentCost = 0;
     private bool sell = false;
     private Sprite cursorChanged;
@@ -40,6 +40,8 @@ public class PlacingManager : MonoBehaviour
     {
         Deselect();
         defaultTimeScale = Time.timeScale;
+        paused = false;
+        catToPlace = null;
     }
     void Update()
     {
@@ -48,15 +50,6 @@ public class PlacingManager : MonoBehaviour
         {
             PauseScreen(!paused);
         }
-    }
-
-    public bool IsPlacing()
-    {
-        if (paused)
-        {
-            return false;
-        }
-        return (catToPlace != null);
     }
     public bool IsSelling()
     {
@@ -79,10 +72,11 @@ public class PlacingManager : MonoBehaviour
     }
     public void PlaceCat()
     {
-        if (paused)
+        if (paused || catToPlace == null)
         {
             return;
         }
+
         GameObject createdCat = Instantiate(catToPlace, mouseW.GetPlacerPosition(), Quaternion.identity);
         createdCat.GetComponent<CatAttack>().Setup(rManager);
         createdCat.GetComponent<Placeable>().Setup(this);
